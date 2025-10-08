@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\sugus\eclipse-workspace\Prueba1\DAW.MP03.UF01.D250923.P01HolaMundo\.metadata\.plugins\org.eclipse.jdt.core
+3251249088.index
+3384868344.index
+1865797976.index

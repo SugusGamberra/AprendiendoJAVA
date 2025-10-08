@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\sugus\eclipse-workspace\Prueba1\UF01.D08102025.P02AreaTriangulo\.metadata\.plugins\org.eclipse.jdt.core
+552499604.index
+3384868344.index
+1865797976.index
