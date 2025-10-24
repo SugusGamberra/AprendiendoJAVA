@@ -75,7 +75,7 @@ Según tu IDE podrás darle a un botón de JDK o en la misma terminal decirle "o
 4. Te dirá si quieres abrir la perspectiva de JAVA, eso es que te pone los botoncitos en la barra de tareas que son concretos y útiles para JAVA. Yo le doy siempre a "Open perspective".
 5. Verás que se te han abierto las carpetas en el Package Explorer, despliega y verás 2 subcarpetas, clic derecho en la que se llama "src" - New - Package - nombralo, yo le pondré "PJDKPackage", y le das a finish. 
 6. Clic derecho de nuevo en "src" - New - Class - Nombralo como quieras (yo le pondre ProbandoJDK) y abajo marca "public static_void main(String[] args)". Dale a Finish!
-7. Verás que te abre ya con todo casi hecho, sencillamente en la parte que verás // TODO blablabla , desde ahí puedes empezar a poner tu código. Yo desde ahí pondré unos comentarios para que tu puedas ver [mi código](./1.%Setup/ProbandoJDK/src/ProbandoJDK.java) explicado y palante!
+7. Verás que te abre ya con todo casi hecho, sencillamente en la parte que verás // TODO blablabla , desde ahí puedes empezar a poner tu código. Yo desde ahí pondré unos comentarios para que tu puedas ver [mi código]([./1.%Setup/ProbandoJDK/src/ProbandoJDK.java](https://github.com/SugusGamberra/AprendiendoJAVA/blob/858cce138c0514c2a9f19293c2594e389b5bb976/0.%20Fundamentos%20de%20la%20Programaci%C3%B3n%20en%20JAVA/1.%20Setup/ProbandoJDK/src/PJDKPackage/ProbandoJDK.java)) explicado y palante!
 8. Una vez hayas puesto tu "System.out.println("Hola mundo o lo q quieras poner");" dale al botoncito verde de play arriba y verás abajo en la consola que debería haber salido tu mensaje ;3
 9. Listoooo!! A que es sencillito??
 
