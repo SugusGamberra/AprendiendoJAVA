@@ -1,0 +1,15 @@
+# 1. Ignorar metadatos de Eclipse
+.settings/** linguist-vendored
+.project linguist-vendored
+.classpath linguist-vendored
+
+# 2. Ignorar carpetas de build
+target/** linguist-generated
+build/** linguist-generated
+
+# 3. Ignorar dependencias de frontend
+node_modules/** linguist-vendored
+
+# 4. Ignorar archivos de configuración que no son código real
+*.json linguist-vendored
+*.yml linguist-vendored

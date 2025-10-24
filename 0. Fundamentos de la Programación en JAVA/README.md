@@ -12,7 +12,7 @@ Asegúrate de tener instalado:
 2. IDE: Recomiendo Eclipse (es el que yo uso) pero puedes usar IntelliJ IDEA Community Edition o Visual Studio Code con la extensión de Java! 
     - Eclipse: https://eclipseide.org
     - Intellij IDEA: https://www.jetbrains.com/idea/download/?section=windows
-    - https://code.visualstudio.com
+    - VS Code: https://code.visualstudio.com
 
 ## 🗺️ Hoja de Ruta del Tutorial 
 
