@@ -6,7 +6,7 @@ Holaaa! Este es el paso más aburrido pero más necesario! Yo te propongo estos 
 
 ### Qué es?
 
-Es el motor que hace que JAVA funcione. Es lo primero que tenemos que tener ready, FUNDAMENTAL!! Es como el kit de herramientas de un albañil. Sin él no te puede levantar un muro!! Si leíste el [README](0.%Fundamentos%de%la%Programación%en%JAVA/README.md) lo tendrás ya bajado! Ejecuta el archivo que has descargado y yasta, sigue indicaciones si te las da en la instalación y listo!
+Es el motor que hace que JAVA funcione. Es lo primero que tenemos que tener ready, FUNDAMENTAL!! Es como el kit de herramientas de un albañil. Sin él no te puede levantar un muro!! Si leíste el README de fundamentos lo tendrás ya bajado! Ejecuta el archivo que has descargado y yasta, sigue indicaciones si te las da en la instalación y listo!
 
 Para ver si tu PC reconoce JAVA abre tu terminal (le das a inicio en tu PC y en el buscador pon CMD o Símbolo del sistema, a ese le das). 
 
