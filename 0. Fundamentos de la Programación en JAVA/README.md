@@ -20,7 +20,7 @@ El tutorial está dividido en módulos. Iremos paso a paso, con explicaciones se
 
 | Módulo | Tema Principal | Archivo / Carpeta | Estado |
 | :--- | :--- | :--- | :--- |
-| **00** | Configuración e Instalación [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)](#) | [SETUP](./1.%20Setup/SETUP.md) | ✅ Listo |
+| **00** | Configuración e Instalación [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)](#) | [SETUP](./1.%20Setup/README.md) | ✅ Listo |
 | **01** | Variables y tipos de datos primitivos | - | ⏳ Pendiente |
 | **02** | Operadores aritméticos y lógicos | - | ⏳ Pendiente |
 | **03** | Estructuras de control (If, Switch) | - | ⏳ Pendiente |
