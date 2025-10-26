@@ -57,7 +57,7 @@ Da igual cuál hayas elegido, nos vamos a cerciorar de que el IDE se comunica co
 2. Crea un nuevo proyecto, da igual dónde elijas guardarlo! Yo le nombraré al archivo como ProbandoJDK.java (depende del IDE hará o no falta ponerle la extensión .java a tu archivo jeje)
 3. Copia y pega este codigo:
 
-// Probando el JDK
+// Probando el JDK (btw esto es un comentario, sirve para organizar tu código explicando cada parte tanto para ti como para algún compi de trabajo si se da el caso, asi nadie se pierde cuando andes con el tecletecle xd)
 
 public class ProbandoJDK {
     // Para que te vayas ubicando, esto es donde empieza tu programa
