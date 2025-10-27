@@ -14,16 +14,20 @@ Asegúrate de tener instalado:
     - Intellij IDEA: https://www.jetbrains.com/idea/download/?section=windows
     - VS Code: https://code.visualstudio.com
 
-## 🗺️ Hoja de Ruta del Tutorial 
+## 🗺️ Hoja de Ruta del curso 
 
-El tutorial está dividido en módulos. Iremos paso a paso, con explicaciones sencillas y **ejemplos de código funcionales** por cada lección que demos.
+El curso está dividido en módulos. Iremos paso a paso, con explicaciones sencillas y **ejemplos de código funcionales** por cada lección que demos.
 
 | Módulo | Tema Principal | Archivo / Carpeta | Estado |
 | :--- | :--- | :--- | :--- |
 | **00** | Configuración e Instalación [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)](#) | [SETUP](./1.%20Setup/README.md) | ✅ Listo |
 | **01** | Variables y concatenar | [VARIABLES](./2.%20Variables/README.md) | ✅ Listo |
-| **02** | Operadores aritméticos y lógicos | - | ⏳ Pendiente |
-| **03** | Estructuras de control (If, Switch) | - | ⏳ Pendiente |
-| **04** | Bucles (for, while, do-while) | - | ⏳ Pendiente |
-| **05** | Arrays | - | ⏳ Pendiente |
-| **06** | Clases, objetos y POO (intro) | - | ⏳ Pendiente |
+| **02** | Operadores aritméticos y lógicos | [OPERADORES](3.%20Operadores%20aritméticos%20y%20lógicos/README.md) | ✅ Listo |
+| **03** | Estructuras de control de flujo | - | ⏳ Pendiente |
+| **04** | Modulación | - | ⏳ Pendiente |
+| **05** | Arrays y listas | - | ⏳ Pendiente |
+| **06** | Diccionarios | - | ⏳ Pendiente |
+| **07** | Implementación | - | ⏳ Pendiente |
+| **08** | Manejo de excepciones | - | ⏳ Pendiente |
+| **09** | Clases, objetos y POO (intro) | - | ⏳ Pendiente |
+| **10** | Depuración y buenas prácticas | - | ⏳ Pendiente |
