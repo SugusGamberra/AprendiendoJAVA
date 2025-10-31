@@ -1,24 +1,33 @@
 # 🛠️ Preparando el Entorno (SETUP)
 
-Holaaa! Este es el paso más aburrido pero más necesario! Yo te propongo estos pasos pero, si eres una persona muy visual, te recomiendo buscar tutoriales en youtube!
+Holaaa! 💛 Este es el paso más aburrido pero más necesario! Yo te propongo estos pasos pero, si eres una persona muy visual, te recomiendo buscar tutoriales en 🎥youtube!
 
-## JDK
+---
+
+## ☕ JDK
 
 ### Qué es?
 
-Es el motor que hace que JAVA funcione. Es lo primero que tenemos que tener ready, FUNDAMENTAL!! Es como el kit de herramientas de un albañil. Sin él no te puede levantar un muro!! Si leíste el README de fundamentos lo tendrás ya bajado! Ejecuta el archivo que has descargado y yasta, sigue indicaciones si te las da en la instalación y listo!
+Es el motor que hace que **JAVA** funcione. Es lo primero que tenemos que tener *ready*, FUNDAMENTAL!! 
 
-Para ver si tu PC reconoce JAVA abre tu terminal (le das a inicio en tu PC y en el buscador pon CMD o Símbolo del sistema, a ese le das). 
+Es como el kit de herramientas de un albañil. Sin él no te puede levantar un muro!! 
 
-Escribe en el cmd lo siguiente:
+Si ya leíste el README de Fundamentos, probablemente lo tengas instalado.  
+Ejecuta el archivo que descargaste, sigue las indicaciones, y listo!
 
+Para comprobar si tu PC reconoce Java:
+
+1. Abre la **terminal** (Inicio → busca *CMD* o *Símbolo del sistema*).
+2. Escribe:
+
+```bash
 java -version
+```
+3. Si aparece la versión, todo bien! Si no, tendrás que añadir Java al PATH de tu sistema. (Busca en YouTube: “cómo configurar PATH Java en [tu sistema operativo]”).
 
-Le das a enter y te debería salir la versión que instalaste. Si no te sale ni te rayes, mira bien dónde instalaste JAVA y decirle a tu pc "oe está aquí instalada", su PATH vaya. Es más coñazo y técnico de hacer... si te pasa, busca un tutorial (como configurar path java en tal SO).
+## 🧠 Instalación del IDE que hayas elegido!
 
-## Instalación del IDE que hayas elegido!
-
-Un IDE es el entorno de desarrollo integrado: el programita donde picas código.
+Un **IDE** es el entorno de desarrollo integrado: el programita donde picas código.
 
 ### 🥇 ECLIPSE
 
@@ -49,14 +58,17 @@ El que yo usaré ;3
     * Sigue dando a "Next" y finaliza.
 3.  **Listo:** Al abrirlo, te pedirá configurar cosillas y tal, eso a tu gusto ;P
 
-## Tu primer proyecto en JAVA
+---
+
+## 🧩 Tu primer proyecto en JAVA
 
 Da igual cuál hayas elegido, nos vamos a cerciorar de que el IDE se comunica con el JDK:
 
 1. Abre tu IDE
-2. Crea un nuevo proyecto, da igual dónde elijas guardarlo! Yo le nombraré al archivo como ProbandoJDK.java (depende del IDE hará o no falta ponerle la extensión .java a tu archivo jeje)
+2. Crea un nuevo proyecto, da igual dónde elijas guardarlo! Yo le nombraré al archivo como `ProbandoJDK.java` (depende del IDE hará o no falta ponerle la extensión .java a tu archivo jeje)
 3. Copia y pega este codigo:
 
+```java
 // Probando el JDK (btw esto es un comentario, sirve para organizar tu código explicando cada parte tanto para ti como para algún compi de trabajo si se da el caso, asi nadie se pierde cuando andes con el tecletecle xd)
 
 public class ProbandoJDK {
@@ -66,17 +78,22 @@ public class ProbandoJDK {
         System.out.println("Hola JDK, estas ahi???");
     }
 }
+```
 
 Según tu IDE podrás darle a un botón de JDK o en la misma terminal decirle "oye pásame esto por pantalla", por eso te recomiendo Eclipse, porque yo lo voy a enfocar todo esto a ese IDE :,) por lo general tos funcionan igual asi que nite :3 es por ello que voy a profundicar ahora mismitico en el paso a paso de ECLIPSE:
 
-1. Abre Eclipse.
-2. Se abrirá una ventana que te dará a elegir dónde ubicar tu espacio de trabajo. Te recomiendo crear una carpeta solo para ello! Te iré guiando proyecto a proyecto con estos pasos para que tengas todo siempre organizado, aunque ya te lo aprendas de memoria!!! Así que crea tu carpeta de trabajo dentro del workspace, ponle algo como AprendiendoFundamentosJAVA, y dentro de esta carpeta crea otra que se llame ProbandoJDK. Ya seleccionas esa en el launcher de eclipse y le das a "Launch".
-3. Se te abrirá ya tu proyecto! Así que dale ahora a File - New - Project... - Se te abre una ventana emergente y la primera opción (si lo tienes todo bien) será "Java Project", seleccionas esa, le das a Next. Dale un nombre a tu proyecto, yo pondré ProbandoJDK y le das a Finish.
-4. Te dirá si quieres abrir la perspectiva de JAVA, eso es que te pone los botoncitos en la barra de tareas que son concretos y útiles para JAVA. Yo le doy siempre a "Open perspective".
-5. Verás que se te han abierto las carpetas en el Package Explorer, despliega y verás 2 subcarpetas, clic derecho en la que se llama "src" - New - Package - nombralo, yo le pondré "PJDKPackage", y le das a finish. 
-6. Clic derecho de nuevo en "src" - New - Class - Nombralo como quieras (yo le pondre ProbandoJDK) y abajo marca "public static_void main(String[] args)". Dale a Finish!
-7. Verás que te abre ya con todo casi hecho, sencillamente en la parte que verás // TODO blablabla , desde ahí puedes empezar a poner tu código. Yo desde ahí pondré unos comentarios para que tu puedas ver mi código explicado y palante!
-8. Una vez hayas puesto tu "System.out.println("Hola mundo o lo q quieras poner");" dale al botoncito verde de play arriba y verás abajo en la consola que debería haber salido tu mensaje ;3
+### 💻 Guía paso a paso para Eclipse
+
+1. Abre **Eclipse**.
+2. Se abrirá una ventana que te dará a elegir dónde ubicar tu espacio de trabajo. Te recomiendo crear una carpeta solo para ello! Ponle algo como **AprendiendoFundamentosJAVA**, y dentro de esta carpeta crea otra que se llame **ProbandoJDK**. Ya seleccionas esa en el launcher de eclipse y le das a `Launch`.
+3. Se te abrirá ya tu proyecto! Así que dale ahora a `File - New - Project`... - Se te abre una ventana emergente y la primera opción (si lo tienes todo bien) será `Java Project`, seleccionas esa, le das a `Next`. Dale un nombre a tu proyecto, yo pondré **ProbandoJDK** y le das a `Finish`.
+4. Te dirá si quieres abrir la perspectiva de JAVA, eso es que te pone los botoncitos en la barra de tareas que son concretos y útiles para JAVA. Yo le doy siempre a `Open perspective`.
+5. Verás que se te han abierto las carpetas en el *Package Explorer*, despliega y verás 2 subcarpetas, clic derecho en la que se llama `src - New - Package` - nombralo, yo le pondré **PJDKPackage**, y le das a `finish`. 
+6. Clic derecho de nuevo en `src - New - Class` - Nombralo como quieras (yo le pondre **ProbandoJDK**) y abajo marca `public static_void main(String[] args)`. Dale a `Finish`!
+7. Verás que te abre ya con todo casi hecho, sencillamente en la parte que verás *// TODO blablabla* , desde ahí puedes empezar a poner tu código. Yo desde ahí pondré unos comentarios para que tu puedas ver mi código explicado y palante!
+8. Una vez hayas puesto tu `System.out.println("Hola mundo o lo q quieras poner");` dale al botoncito verde de **play** arriba y verás abajo en la consola que debería haber salido tu mensaje ;3
 9. Listoooo!! A que es sencillito??
 
-Nos vemos en la proxima leccion!! besissss!!
+---
+
+> 🎉 Nos vemos en la proxima leccion!! besissss!!
