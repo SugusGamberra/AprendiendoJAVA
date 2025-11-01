@@ -1,5 +1,5 @@
 # ☕ Lenguaje de programación Java  
-![Java](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black)
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 
 > 🌈 Bienvenid al Repositorio de Java!  
 > Aquí encontrarás los **fundamentos de programación en Java** explicados de forma sencilla y práctica, con ejemplos y ejercicios para ejecutar y trastear a gusto.
