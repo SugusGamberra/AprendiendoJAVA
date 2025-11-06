@@ -90,10 +90,38 @@ Según tu IDE podrás darle a un botón de JDK o en la misma terminal decirle "o
 4. Te dirá si quieres abrir la perspectiva de JAVA, eso es que te pone los botoncitos en la barra de tareas que son concretos y útiles para JAVA. Yo le doy siempre a `Open perspective`.
 5. Verás que se te han abierto las carpetas en el *Package Explorer*, despliega y verás 2 subcarpetas, clic derecho en la que se llama `src - New - Package` - nombralo, yo le pondré **PJDKPackage**, y le das a `finish`. 
 6. Clic derecho de nuevo en `src - New - Class` - Nombralo como quieras (yo le pondre **ProbandoJDK**) y abajo marca `public static_void main(String[] args)`. Dale a `Finish`!
-7. Verás que te abre ya con todo casi hecho, sencillamente en la parte que verás *// TODO blablabla* , desde ahí puedes empezar a poner tu código. Yo desde ahí pondré unos comentarios para que tu puedas ver mi código explicado y palante!
+7. Verás que te abre ya con todo casi hecho, sencillamente en la parte que verás *// TODO blablabla* , desde ahí puedes empezar a poner tu código. Yo desde ahí pondré unos comentarios para que tu puedas ver mi código explicado y palante! Si quieres copia y pega ahí esto para que vayas probando:
+
+```java
+System.out.println("Hola mundo!");
+```
+
 8. Una vez hayas puesto tu `System.out.println("Hola mundo o lo q quieras poner");` dale al botoncito verde de **play** arriba y verás abajo en la consola que debería haber salido tu mensaje ;3
 9. Listoooo!! A que es sencillito??
 
+#### 🖥️ Tu primer programa explicado
+
+El **punto de entrada** en Java siempre es el método `main`.
+Aquí le decimos al programa **por dónde empezar a ejecutar 🏁**.
+
+```java
+public static void main(String[] args) {
+    System.out.println("Hola mundo!");
+    System.out.println("Este es nuestro primer programa en JAVA!");
+}
+```
+
+##### 💡 Explicación rápida
+
+- `public static void main` → Indica el punto de entrada del programa.
+- `void` → No devuelve ningún valor (si devolviera, usaríamos `return`).
+- `String[] args` → Son los parámetros que podemos pasar al programa.
+- `System.out.println()` → Muestra mensajes por consola.
+
+El código se ejecuta **de arriba a abajo**, salvo que lo desviemos con *estructuras de control*.
+
 ---
+
+Para una explicación más detayada visita este enlace: [HolaMundo](../../M0485.PRG.P001.HolaMundo/) !!
 
 > 🎉 Nos vemos en la proxima leccion!! besissss!!
