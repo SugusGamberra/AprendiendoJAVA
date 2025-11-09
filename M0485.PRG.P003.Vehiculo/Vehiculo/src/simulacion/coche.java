@@ -7,7 +7,7 @@ public class coche {
 		// Insertamos la llave
 		// Giramos la llave
 		// Internamente ocurren los procesos internos que deban pasar para que el coche se active:
-		// inicioElectronica()
+		// encendidoElectronica()
 		// inicioMecanico()
 		
 		encendidoElectronica();
