@@ -124,6 +124,52 @@ public class Iniciar {
 
 ---
 
+## 🧱 Modificadores de acceso en Java
+
+En JAVA podemos definir **cuán accesible** es una parte del código (clases, métodos, variables...). Esto nos ayuda a proteger la info y mantener una estructura limpita :P
+
+Por ahora usaremos siempre `static` pero -más adelante veremos por qué y cuándo cambiarlo-.
+
+### 🔍 Tipos de acceso
+
+| Modificador | Descripción |
+|--------------|-------------|
+| **public** | Visible dentro de su clase y también desde clases externas. |
+| **private** | Solo puede usarse dentro de su propia clase. No es accesible desde fuera. |
+| **protected** | Visible dentro del mismo package y también por clases hijas (heredadas). |
+| *(sin modificador)* | Visible únicamente dentro del mismo package (nivel “default”). |
+
+### 🧮 Ejemplo: Cálculo del Área de un Triángulo
+
+```java
+package Calculo;
+
+public class areaTriangulo {
+    
+    public static void calculaArea(int base, int altura) {
+        int area = calculaAreaBasica(base, altura);
+        System.out.println("El área del triángulo es " + area);
+    }
+
+    private static int calculaAreaBasica(int base, int altura) {
+        int area = (base * altura) / 2;
+        return area;
+    }
+}
+```
+
+**🧠 Explicación**: Tenemos 2 métodos (`calcularArea()` y `calculaAreaBasica()`). Uno es *público* por lo que se puede llamar desde otras clases, y el otro es *privado*, por lo que solo podemos usarlo dentro de esta misma clase.
+
+La función **privada** hace el cálculo real `(base*altura)/2` y devuelve el resultado con `return`.
+
+La función **pública** llama a la *privada*, obtiene el resultado y lo muestra por consola con `System.out.pirntln()`.
+
+📎 Así vemos cómo combinar ambos niveles de acceso!!
+
+> 👉 Desde fuera solo usamos método público pero dentro este puede aprovechar métodos privados!
+
+---
+
 # 🧠 En resumen
 
 | Concepto                 | Descripción                                       | Ejemplo                                  |

@@ -11,7 +11,7 @@ public class areaRectangulo {
 		
 		// Así concatenamos un texto con variable:
 		
-		System.out.println("El área es: " + area);
+		System.out.println("El área del rectángulo es: " + area);
 		
 		
 	}

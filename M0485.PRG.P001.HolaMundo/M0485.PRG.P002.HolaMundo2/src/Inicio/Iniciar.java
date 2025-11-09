@@ -2,6 +2,10 @@ package Inicio;
 
 import Calculo.areaRectangulo;
 
+// Podemos usar un * arriba en vez de areaRectangulo para que importe TODO, quedando así:
+// import Calculo.*;
+// Pero es recomendable importa solo lo que neceistamos
+
 public class Iniciar {
 
 	public static void main(String[] args) {
@@ -13,6 +17,7 @@ public class Iniciar {
 		
 		System.out.println("Inicio de la ejecución: ");
 		areaRectangulo.calculaArea(10, 50);
+		Calculo.areaTriangulo.calculaArea(10, 50);
 		System.out.println("Fin de la ejecución.");
 		
 		// Con esta forma evitamos el código spaghetti, que es tener 20 mil cosas en un mismo código.
