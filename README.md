@@ -23,6 +23,7 @@
 | [`M0485.PRG.P001.HolaMundo`](./M0485.PRG.P001.HolaMundo/) | Primer programa: impresión en consola `Hello World` | ✅ |
 | Subcarpeta del anterior: [`M0485.PRG.P002.HolaMundo2`](./M0485.PRG.P001.HolaMundo/M0485.PRG.P002.HolaMundo2/) | Realmente es el cálculo del área de un rectángulo y un triángulo pero siguiendo el orden e indicaciones del profesor pues se queda así C: | ✅ |
 | [`M0485.PRG.P003.Vehiculo`](./M0485.PRG.P003.Vehiculo/) | Explicación sobre clases públicas y privadas | ✅ |
+| [`M0485.PRG.P004.PeticionDatos`](./M0485.PRG.P004.PeticionDatos/) | Explicación sobre la petición de datos en consola y condicionales (if y elseif) | ✅ |
 | [`UF01.D08102025.P02AreaTriangulo`](./UF01.D08102025.P02AreaTriangulo/) | Cálculo de área del triángulo | ✅ |
 | [`UF01.D09102025.P03EjemplosJAVA`](./UF01.D09102025.P03EjemplosJAVA/) | Paradigmas imperativo y Orientado a Objetos | ✅ |
 
