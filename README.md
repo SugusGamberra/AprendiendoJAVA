@@ -25,6 +25,7 @@
 | [`M0485.PRG.P003.Vehiculo`](./M0485.PRG.P003.Vehiculo/) | Explicación sobre clases públicas y privadas | ✅ |
 | [`M0485.PRG.P004.PeticionDatos`](./M0485.PRG.P004.PeticionDatos/) | Explicación sobre la petición de datos en consola y condicionales (if y elseif) | ✅ |
 | [`M0485.PRG.P005.OperadoresTernarios`](./M0485.PRG.P005.OperadoresTernarios/) | Operadores ternarios, casting y comprobación par-impar | ✅ |
+| [`M0485.PRG.P006.Switch`](./M0485.PRG.P006.Switch/) | Control de flujos con Switch, modularizar switch, uso de métodos | ✅ |
 | [`UF01.D08102025.P02AreaTriangulo`](./UF01.D08102025.P02AreaTriangulo/) | Cálculo de área del triángulo | ✅ |
 | [`UF01.D09102025.P03EjemplosJAVA`](./UF01.D09102025.P03EjemplosJAVA/) | Paradigmas imperativo y Orientado a Objetos | ✅ |
 
