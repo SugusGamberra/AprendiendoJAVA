@@ -212,5 +212,6 @@ Puedes diseñar logica compleja sin tener varios bucles anidados
 | **break** | Rompe el bucle completamente | Cuando ya no hace falta seguir iterando |
 | **incrementos dentro del bucle** | Evitan estancarse | Obligatorio antes de `continue` si dependes del contador |
 | **validación en cada vuelta** | Decide si seguir o salir | Es lo que desencadena o detiene el bucle |
+| **validación en cada vuelta** | Decide si seguir o salir | Es lo que desencadena o detiene el bucle |
 
 ---
