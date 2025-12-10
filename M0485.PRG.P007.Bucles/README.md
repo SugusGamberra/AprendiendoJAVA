@@ -6,7 +6,7 @@ Cada tipo sirve para una cosa pero todos comparten la idea de **repetir código 
 
 ---
 
-## 🟦 `while`
+## 🟦 [`while`](../M0485.PRG.P007.Bucles/bucles/src/bucles/ejemplo01While.java)
 
 Evalúa una condición **antes** de entrar al bloque. Si la condición empieza en `false`, **no se ejecuta ni una sola vez**.
 
@@ -19,7 +19,7 @@ Evalúa una condición **antes** de entrar al bloque. Si la condición empieza e
 
 ---
 
-## 🟨 `do…while`
+## 🟨 [`do…while`](../M0485.PRG.P007.Bucles/bucles/src/bucles/ejemplo02DoWhile.java)
 
 Aquí la cosa cambia: **el bloque se ejecuta al menos una vez** y ya se comprueba **después**. Si en esa comprobación es `true` el bucle sigue, si resulta que es `false` se para.
 
@@ -31,7 +31,7 @@ Aquí la cosa cambia: **el bloque se ejecuta al menos una vez** y ya se comprueb
 
 ---
 
-## 🟩 `for`
+## 🟩 [`for`](../M0485.PRG.P007.Bucles/bucles/src/bucles/ejemplo03For.java)
 
 Bucle estructurado en tres partes:
 
@@ -46,7 +46,7 @@ Ideal cuando sabes **exactamente** cuántas iteraciones habrán, trabajas con co
 
 --- 
 
-## 🟪 `for-each`
+## 🟪 [`for-each`](../M0485.PRG.P007.Bucles/bucles/src/bucles/ejemplo04ForEach.java)
 
 Pensado para recorrer **arrays o colecciones** sin preocuparte de los índices.
 
@@ -156,35 +156,31 @@ Es una salida **INMEDIATA** e **incodicional** del bucle!
 
 Perfecto para ver como `continue` y `break` afectan a una estructura donde la condicion se comprueba al inicio.
 
-Como evalua la condición al inicio con `continue` se salta la vuelta y **reevalúa** la condición. Si no actualizas antes la variable pues... ⚠️bucle infinito :3
+Como evalua la condición al inicio con [`continue`](../M0485.PRG.P007.Bucles/bucles/src/bucles2/test01WhileContinue.java) se salta la vuelta y **reevalúa** la condición. Si no actualizas antes la variable pues... ⚠️bucle infinito :3
 
-Con `break` sale inmediatamente sin reevaluar nada más
+Con [`break`](../M0485.PRG.P007.Bucles/bucles/src/bucles2/test01WhileBreak.java) sale inmediatamente sin reevaluar nada más
 
 ### 🟢 `for`
 
-Aquí es muy natural usar ambos: `continue` salta directamente a la parte de actualización (`contador++`) y luego lo vuelve a comprobar. 
+Aquí es muy natural usar ambos: [`continue`](../M0485.PRG.P007.Bucles/bucles/src/bucles2/test02ForContinue.java) salta directamente a la parte de actualización (`contador++`) y luego lo vuelve a comprobar. 
 
-`break` corta el bucle de golpe.
+[`break`](../M0485.PRG.P007.Bucles/bucles/src/bucles2/test02ForBreak.java) corta el bucle de golpe.
 
 ### 🟡 `do...while`
 
 Este bucle **SIEMPRE** ejecuta una vuelta **ANTES** de comprobar. Esto influye independientemente del número inicial que le pongas al contador, la primera vuelta se ejecuta sí o también!!
 
-`continue` vuelve directamente a la **comprobación**.
+[`continue`](../M0485.PRG.P007.Bucles/bucles/src/bucles2/test03DoWhileContinue.java) vuelve directamente a la **comprobación**.
 
-`break` corta el bucle incluso aun estando en la primera vuelta.
+[`break`](../M0485.PRG.P007.Bucles/bucles/src/bucles2/test03DoWhileBreak.java) corta el bucle incluso aun estando en la primera vuelta.
 
 Muy útil si quieres ejecutar algo almenos una vez pero controlar las siguientes.
 
 ### 🟣 `for each`
 
-Aquí `continue` funciona igual que siempre pero el `break` es especialmente útil para cortar recorridos de arrays y colecciones.
+Aunque no haya contador visible [`continue`](../M0485.PRG.P007.Bucles/bucles/src/bucles2/test04ForEachContinueYBreak.java) pasa al **siguiente elemento**.
 
-Aunque no haya contador visible `continue` pasa al **siguiente elemento** y lo dicho...
-
-`break` rompe todo el recorrido del array.
-
-Muy útil para detener la búsqueda al encontrar un valor concreto, saltarte ciertos elementos, limitar la lectura al user...
+[`break`](../M0485.PRG.P007.Bucles/bucles/src/bucles2/test04ForEachContinueYBreak.java) rompe todo el recorrido del array, lo cual es especialmente util para cortar dichos recorridos de arrays o colecciones tipo para detener la búsqueda al encontrar un valor concreto, saltarte ciertos elementos, limitar la lectura al user...
 
 ---
 
@@ -212,3 +208,6 @@ Puedes diseñar logica compleja sin tener varios bucles anidados
 | **break** | Rompe el bucle completamente | Cuando ya no hace falta seguir iterando |
 | **incrementos dentro del bucle** | Evitan estancarse | Obligatorio antes de `continue` si dependes del contador |
 | **validación en cada vuelta** | Decide si seguir o salir | Es lo que desencadena o detiene el bucle |
+| **validación en cada vuelta** | Decide si seguir o salir | Es lo que desencadena o detiene el bucle |
+
+---
