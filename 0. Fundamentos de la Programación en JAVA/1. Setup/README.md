@@ -65,12 +65,17 @@ El que yo usaré ;3
 Da igual cuál hayas elegido, nos vamos a cerciorar de que el IDE se comunica con el JDK:
 
 1. Abre tu IDE
-2. Crea un nuevo proyecto, da igual dónde elijas guardarlo! Yo le nombraré al archivo como `ProbandoJDK.java` (depende del IDE hará o no falta ponerle la extensión .java a tu archivo jeje)
+2. Crea un nuevo proyecto, da igual dónde elijas guardarlo! Yo le nombraré al archivo como `[ProbandoJDK.java](./ProbandoJDK/)` (depende del IDE hará o no falta ponerle la extensión .java a tu archivo jeje)
 3. Copia y pega este codigo:
 
 ```java
-// Probando el JDK (btw esto es un comentario, sirve para organizar tu código explicando cada parte tanto para ti como para algún compi de trabajo si se da el caso, asi nadie se pierde cuando andes con el tecletecle xd)
+/* Probando el JDK 
+* Btw esto es un comentario largo
+* Sirve para organizar tu código explicando cada parte tanto para ti como para algún compi de trabajo si se da el caso
+* Asi nadie se pierde cuando andes con el tecletecle xd
+*/
 
+// esto seria un comentario corto
 public class ProbandoJDK {
     // Para que te vayas ubicando, esto es donde empieza tu programa
     public static void main(String[] args) {
@@ -86,10 +91,10 @@ Según tu IDE podrás darle a un botón de JDK o en la misma terminal decirle "o
 
 1. Abre **Eclipse**.
 2. Se abrirá una ventana que te dará a elegir dónde ubicar tu espacio de trabajo. Te recomiendo crear una carpeta solo para ello! Ponle algo como **AprendiendoFundamentosJAVA**, y dentro de esta carpeta crea otra que se llame **ProbandoJDK**. Ya seleccionas esa en el launcher de eclipse y le das a `Launch`.
-3. Se te abrirá ya tu proyecto! Así que dale ahora a `File - New - Project`... - Se te abre una ventana emergente y la primera opción (si lo tienes todo bien) será `Java Project`, seleccionas esa, le das a `Next`. Dale un nombre a tu proyecto, yo pondré **ProbandoJDK** y le das a `Finish`.
+3. Se te abrirá ya tu proyecto! Así que dale ahora a `File - New - Project`... - Se te abre una ventana emergente y la primera opción (si lo tienes todo bien) será `Java Project`, seleccionas esa, le das a `Next`. Dale un nombre a tu proyecto, yo pondré **[ProbandoJDK](./ProbandoJDK/)** y le das a `Finish`.
 4. Te dirá si quieres abrir la perspectiva de JAVA, eso es que te pone los botoncitos en la barra de tareas que son concretos y útiles para JAVA. Yo le doy siempre a `Open perspective`.
-5. Verás que se te han abierto las carpetas en el *Package Explorer*, despliega y verás 2 subcarpetas, clic derecho en la que se llama `src - New - Package` - nombralo, yo le pondré **PJDKPackage**, y le das a `finish`. 
-6. Clic derecho de nuevo en `src - New - Class` - Nombralo como quieras (yo le pondre **ProbandoJDK**) y abajo marca `public static_void main(String[] args)`. Dale a `Finish`!
+5. Verás que se te han abierto las carpetas en el *Package Explorer*, despliega y verás 2 subcarpetas, clic derecho en la que se llama `src - New - Package` - nombralo, yo le pondré **[PJDKPackage](./ProbandoJDK/src/PJDKPackage/)**, y le das a `finish`. 
+6. Clic derecho de nuevo en `src - New - Class` - Nombralo como quieras (yo le pondre **[ProbandoJDK](./ProbandoJDK/src/PJDKPackage/ProbandoJDK.java)**) y abajo marca `public static_void main(String[] args)`. Dale a `Finish`!
 7. Verás que te abre ya con todo casi hecho, sencillamente en la parte que verás *// TODO blablabla* , desde ahí puedes empezar a poner tu código. Yo desde ahí pondré unos comentarios para que tu puedas ver mi código explicado y palante! Si quieres copia y pega ahí esto para que vayas probando:
 
 ```java
