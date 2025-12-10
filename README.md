@@ -1,7 +1,7 @@
 # ☕ Lenguaje de programación Java  
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Eclipse](https://img.shields.io/badge/Eclipse%20IDE-2C2255.svg?style=for-the-badge&logo=Eclipse-IDE&logoColor=white)
 
-> 🌈 Bienvenid al Repositorio de Java!  
+> 🌈 Bienvenidinchi al Repositorio de Java!  
 > Aquí encontrarás los **fundamentos de programación en Java** explicados de forma sencilla y práctica, con ejemplos y ejercicios para ejecutar y trastear a gusto :P
 
 ---
@@ -26,7 +26,8 @@
 | [`M0485.PRG.P004.PeticionDatos`](./M0485.PRG.P004.PeticionDatos/) | Explicación sobre la petición de datos en consola y condicionales (if y elseif) | ✅ |
 | [`M0485.PRG.P005.OperadoresTernarios`](./M0485.PRG.P005.OperadoresTernarios/) | Operadores ternarios, casting y comprobación par-impar | ✅ |
 | [`M0485.PRG.P006.Switch`](./M0485.PRG.P006.Switch/) | Control de flujos con Switch, modularizar switch, uso de métodos | ✅ |
-|[`M0485.PRG.P007.Bucles`](M0485.PRG.P007.Bucles/) | Bucles while, dowhile, each y foreach con control interno (`continue` y `break`) | ✅ |
+| [`M0485.PRG.P007.Bucles`](M0485.PRG.P007.Bucles/) | Bucles while, dowhile, each y foreach con control interno (`continue` y `break`) | ✅ |
+| [`M0485.PRG.P008.Menu`](./M0485.PRG.P008.Menu/) | Refactorizar un código (`aplicacion1` con `main` → `aplicacion2` con `main` e `interfaz de usuario`) | ⏳ En desarrollo |
 | [`UF01.D08102025.P02AreaTriangulo`](./UF01.D08102025.P02AreaTriangulo/) | Cálculo de área del triángulo | ✅ |
 | [`UF01.D09102025.P03EjemplosJAVA`](./UF01.D09102025.P03EjemplosJAVA/) | Paradigmas imperativo y Orientado a Objetos | ✅ |
 
@@ -35,9 +36,9 @@
 ## 🚀 Empieza por aquí
 
 👉 **Primer paso:** entra en `0. Fundamentos de la Programación en JAVA` para ver la base teórica.  
-Si prefieres seguir lo que doy en clases de programación visita los proyectos en carpetas con nombres to raros xd 
+Si prefieres seguir lo que doy en clases de programación visita los proyectos en carpetas con nombres to raros xd (`M0485.PRG.P*`)
 
 ---
 
 > 🧩 Este repositorio seguirá creciendo con más ejemplos y retos :3  
-> 💛 Hecho con cariño (y café ☕) uwu
+> 🧡 Hecho con cariño (y café ☕) uwu
