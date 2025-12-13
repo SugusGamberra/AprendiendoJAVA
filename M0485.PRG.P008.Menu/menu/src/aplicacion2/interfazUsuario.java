@@ -24,25 +24,50 @@ public class interfazUsuario {
 			// esto viene un poco mal xk hemos previsto el codigo para q sea en mensaje para el usuario
 			// ahora vamos a mostrar un mensaje en una ventana (Desktop)
 			// Se usa el metodo JOptionPane
-			JOptionPane.showMessageDialog(null, mensaje, "Desktop", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, mensaje, "Calculadora", JOptionPane.INFORMATION_MESSAGE);
 		}
 		
 	}
 
+	// A partir de un mensaje nos devuelve un valor entero
 	public static int getValorEntero(String mensaje) {
 		int valor = 0;
-		muestraMensaje(mensaje);
-		Scanner scanner = new Scanner(System.in);
-		valor = scanner.nextInt();
+		/* vamos a cambiar esto un poco
+		 * aqui haremos la comprobacion de que si es consola o si es desktop
+		 * cuando sea desktop haremos algo similar al JOptionPane
+		 */
+		
+		if (TIPO_INTERFAZ == "C") {
+			muestraMensaje(mensaje);
+			Scanner scanner = new Scanner(System.in);
+			valor = scanner.nextInt();
+			// scanner.close();
+		} else if (TIPO_INTERFAZ == "D") {
+			// lo que el user ponga aqui me lo devuelve en forma de String!!!
+			// tengo que transformar este valorDevuelto a una de tipo int para poder operar!!
+			String valorDevuelto = JOptionPane.showInputDialog(null, mensaje, "Calculadora", JOptionPane.QUESTION_MESSAGE);
+			// tenemos una opcion para transformar una cadena (siempre que tenga numeros)
+			// parseInt es un metodo q recibe como parametro una cadena y me la devuelve como valor numerico!
+			
+			valor = Integer.parseInt(valorDevuelto);
+		}
 
 		return valor;
 	}
 	
+	// nos devuelve un double
 	public static double getValorDouble(String mensaje) {
 		double valor = 0;
-		muestraMensaje(mensaje);
-		Scanner scanner = new Scanner(System.in);
-		valor = scanner.nextDouble();
+
+		if (TIPO_INTERFAZ == "C") {
+			muestraMensaje(mensaje);
+			Scanner scanner = new Scanner(System.in);
+			valor = scanner.nextDouble();
+			// scanner.close();
+		} else if (TIPO_INTERFAZ == "D") {
+			String valorDevuelto = JOptionPane.showInputDialog(null, mensaje, "Calculadora", JOptionPane.QUESTION_MESSAGE);
+			valor = Double.parseDouble(valorDevuelto);
+		}
 
 		return valor;
 	}

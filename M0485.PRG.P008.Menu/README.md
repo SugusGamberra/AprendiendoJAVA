@@ -67,4 +67,93 @@ Así el resto del programa **ni sabe ni le importa** cómo se muestran los mensa
 
 ---
 
-> 👩🏻‍💻 El Sábado se termina esto según! Así que paciencia :P
+> 👩🏻‍💻 Esta es la continuación de lo nuevo que se ha hecho y las cosas toqueteadas del código ^^
+
+## 📥 Entrada de datos y diseño de la aplicación
+
+En esta sesión aprendemos **cómo pedir datos al usuario** y, sobre todo, **cómo estructurar bien una aplicación Java** para que sea mantenible y escalable 
+
+### 🧠 Separación de responsabilidades (idea clave)
+
+La aplicación se divide en **tres partes bien diferenciadas**:
+
+* 🖥️ **Interfaz de usuario** → comunicación con el usuario
+* ⚙️ **Lógica** → funcionamiento interno de la aplicación
+* 🚀 **Main** → punto de arranque del programa
+
+Esto es una **buena práctica fundamental** en programación.
+
+### 🎨 Interfaz de usuario configurable
+
+Toda la comunicación con el usuario se centraliza en una única clase:
+👉 `interfazUsuario`
+
+Desde aquí decidimos **cómo interactúa el usuario** con la aplicación:
+
+* `C` → Consola
+* `D` → Ventanas (Desktop)
+
+Con solo cambiar **un valor**, toda la app cambia de interfaz sin tocar la lógica 😍
+
+Esto nos permite:
+
+* Código más limpio
+* Menos duplicación
+* Fácil mantenimiento
+* Preparar el proyecto para otros entornos (por ejemplo, web 🌐)
+
+### 💬 Mostrar mensajes al usuario
+
+La aplicación usa **un único método** para mostrar mensajes, que decide internamente si:
+
+* imprime por consola
+* o muestra una ventana gráfica
+
+👉 La lógica **no sabe ni le importa** cómo se muestra el mensaje. Eso es diseño limpio ✔️
+
+### ✍️ Pedir datos al usuario
+
+Aprendemos a pedir datos usando métodos reutilizables:
+
+* 📌 Pedir **enteros**
+* 📌 Pedir **decimales**
+
+Según el tipo de interfaz:
+
+* En consola se lee desde teclado
+* En desktop se usan ventanas emergentes
+
+Además, vemos algo muy importante:
+🔁 **Conversión de texto a número**
+Los datos introducidos por el usuario llegan como texto y deben transformarse para poder operar con ellos.
+
+#### 🧮 Ejemplo práctico: calculadora
+
+La lógica de la aplicación:
+
+* Muestra un **menú**
+* Pide una **opción**
+* Ejecuta la operación correspondiente:
+
+  * Sumar
+  * Restar
+  * Multiplicar
+  * Dividir
+  * Obtener el resto
+
+Cada operación:
+
+* Pide los valores al usuario
+* Realiza el cálculo
+* Muestra el resultado
+
+Todo usando la **interfaz de usuario centralizada** 💡
+
+### 🏗️ Conceptos importantes que nos llevamos
+
+✅ Separación frontend / backend
+✅ Código reutilizable
+✅ Refactorización bien aplicada
+✅ Aplicaciones preparadas para crecer
+
+En proyectos pequeños ya estamos trabajando **como en proyectos profesionales** 🚀
