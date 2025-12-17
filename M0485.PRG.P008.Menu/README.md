@@ -157,3 +157,59 @@ Todo usando la **interfaz de usuario centralizada** 💡
 ✅ Aplicaciones preparadas para crecer
 
 En proyectos pequeños ya estamos trabajando **como en proyectos profesionales** 🚀
+
+---
+
+## 🖥️ Scanner
+
+### ❌ El problema típico con `Scanner`
+
+El error habitual aparece cuando creas un `Scanner` con `System.in`, lo **cierras** y luego intentas **volver a usar el Scanner** leyendo de consola.
+
+El **motivo** es porque:
+
+- `Scanner` lee de `System.in`
+- Cuando **cierras** `Scanner` cierras también `System.in`
+- `System.in` **NO** se puede volver a abrir
+
+Por lo que esto deriva en consola bloqueada, excepciones raras y errores por tos laos.
+
+### ✅ Solución
+
+Existen diferentes formas de solucionar esto:
+
+#### ✨ Declarar `Scanner` **fuera** de los **métodos**
+
+```java
+package scanner;
+
+import java.util.Scanner;
+
+public class Main {
+  static Scanner peticion;
+
+  public static void main(String[] args) {
+    // se instancia UNAAAA sola vez
+    peticion = new Scanner(System.in);
+    prueba();
+    prueba();
+    peticion.close();
+  }
+
+  private static void prueba() {
+    System.out.println("Valor 1: ");
+    int valor1 = peticion.nextInt();
+    System.out.println("Valor 2: ");
+    int valor2 = peticion.nextInt();
+    System.out.println("Resultado: " (valor1 + valor2));
+  }
+}
+```
+
+No creamos el `Scanner` **dentro** del método porque si lo cierro ahí, dentro, se cierra el `System.in` y **bloqueas la consola**.
+
+Declararlo fuera funciona porque el `Scanner` se reutiliza, no se cierra antes de tiempo y varios métodos pueden usarlo sin mayor drama. Ya se cierra al **final** del programa, cuando ya **no** se va a pedir nada más por  consola.
+
+#### 🔓 Dejarlo abierto
+
+En algunos casos es válido, **siempre que** lo expliquemos en un comentario y se justifique que cerrar `System.in` rompe la app.
