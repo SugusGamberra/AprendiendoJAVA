@@ -6,7 +6,7 @@ Un **Array** es como una estantería con un número fijo de huecos. Sirve para g
 
 ---
 
-## Características Principales
+## 🩵 Características Principales
 
 1.  **Tamaño Fijo:** Nacen con un tamaño y mueren con ese tamaño. Si creas uno de 3 huecos y necesitas 4... mala suerte, toca crear uno nuevo.
 2.  **Homogéneos:** Todo lo que guardes dentro debe ser del mismo tipo (todo `int`, o todo `String`, etc.). *La excepción son los arrays de tipo `Object`, que veremos abajo.*
@@ -15,11 +15,11 @@ Un **Array** es como una estantería con un número fijo de huecos. Sirve para g
 
 ---
 
-## Declaración e Inicialización
+## 🙂‍↕️ [`Declaración`](./arrays/src/ejemplos/C01Declaracion.java) e [`Inicialización`](./arrays/src/ejemplos/C02Inicializacion.java)
 
-Hay dos formas principales de crear la "estantería":
+Hay varias formas principales de crear la "estantería":
 
-### A. Declarar y luego dimensionar (en dos pasos)
+### 1️⃣ Declarar y luego dimensionar (en dos pasos)
 
 ```java
 // 1. Declaramos (decimos de qué tipo será)
@@ -30,14 +30,14 @@ int[] runasEncontradas;
 runasEncontradas = new int[5];
 ```
 
-### B. Todo en una linea (directo)
+### 2️⃣ Todo en una linea (directo)
 
 ```java
 // Creamos un array de doubles de 10 posiciones
 double[] precios = new double[10];
 ```
 
-### C. Con valores ya conocidos (literal)
+### 3️⃣ Con valores ya conocidos (literal)
 
 Si ya sabes que vas a guardarle dentro no hace falta ponerle el tamaño, ya java lo cuenta solito e.e
 
@@ -49,7 +49,7 @@ String[] misRunas = { "Fehu", "Uruz", "Thurisaz" };
 
 ---
 
-## Valores por defecto
+## ⛓️ Valores por defecto
 
 La "nada" de java xd Cuando haces un `new` Java no deja la basura que hubiera en la memoria. Rellena los huecos con valores "vacíos" según el tipo:
 
@@ -63,7 +63,7 @@ La "nada" de java xd Cuando haces un `new` Java no deja la basura que hubiera en
 
 ---
 
-## Acceder y modificar datos
+## ✍🏻 Acceder y modificar datos
 
 Usaremos los `[]` con el numero del índice:
 
@@ -85,7 +85,7 @@ System.out.println(puntuaciones[0]); // Imprime: 10
 
 ---
 
-## Arrays de Objetos (polimorfismo vaya)
+## 🐐 Arrays de Objetos (polimorfismo vaya)
 
 En java **TODO** hereda de una clase madre llamada `Object`. Igual que un alumno y un profe tienen roles distintos, pero ambos son humanos. Un `String` y un `Int` son distintos pero ambos son `Object`.
 
@@ -101,9 +101,20 @@ cajonDesastre[2] = true;          // Boolean
 
 ---
 
-## Recorrer arrays con Bucles
+## ➿ [`Recorrer arrays con Bucles`](./arrays/src/ejemplos/C03Recorrido.java)
 
-Para leer el array de una sin tener que estar poniendo 20 veces un `System.out.println(arrayObjetos[0]);`, `System.out.println(arrayObjetos[1]);`, etc, usamos bucles:
+Para leer el array de una sin tener que estar poniendo 20 veces un `System.out.println(arrayObjetos[0]);`, `System.out.println(arrayObjetos[1]);`, etc, usamos bucles.
+
+Puedes recorrerlos de atrás hacia adelante y viceversa, en el [archivo](./arrays/src/ejemplos/C03Recorrido.java) puedes visualizarlo!
+
+A la hora de iterar por cada elemento del array se puede poner de 2 formas, ambas son lo mismo:
+
+```java
+// forma 1
+i < ultimoElemento
+// forma 2
+i <= ultimoIndice.lenght -1
+```
 
 ### `for`
 
@@ -141,6 +152,55 @@ while (i < elementos.length) {
 
 ---
 
-> Esto ha sido la clase de hoy, yo la he completado con mis conocimientos (los buclers y tal) 🫦
-> El próximo día según continuamos, no sé si el profe añadira mas cosicas
-> Un abruzoooo!! 🫂🫂
+## [`Arrays multidimensionales`](./arrays/src/ejemplos/C04ArrayMultidimensional.java)
+
+Hasta ahora hemos visto arryas de una dimensión, pero para ciertas cosas como **matrices**, **matemáticas**... nos puede servir. Pueden ser de tantas dimensiones como queramos.
+
+Las matrices son útiles también en **juegos**. Por ejemplo, tenemos 3 dimensiones en un entorno 3d (`x`, `y` y `z`), pues que en cada pixel según la posición en nuestra pantalla tratemos dicho pixel de una forma concreta.
+
+Hay 2 formas de crearlas:
+
+```java
+// forma 1
+int[][] matriz = new int[3][4];
+matriz[0][0] = 25;
+matriz[0][1] = 32;
+
+// forma 2.1
+int[][] matriz2 = {
+    {1, 2, 3, 4},
+    {5, 6, 7, 8},
+    {9, 10, 11, 12}
+};
+
+// forma 2.2, que es más un formalismo que otra cosa
+int[][] matriz3 = new int [3][4] {
+    {1, 2, 3, 4},
+    {5, 6, 7, 8},
+    {9, 10, 11, 12}
+};
+```
+
+Igual que en las unidimensionales, podemos recorrer estas con bucles.
+
+Si defino una matriz irregular, por ejemplo una de las filas tiene un valor menos (una fila de 4, una de 3, y otra de 4), el recorrido se traba en la fila de 3 elementos porque coge el último elemento de la fila más larga.
+
+---
+
+## 🫦 [`Utilidades`](./arrays/src/ejemplos/C05Utilidades.java)
+
+Si quisiéramos leer directamente un array sin tener que recorrerlo con `bucles`, si ponemos:
+
+```java
+System.out.println(arrayObjetos);
+```
+
+👆🏻 Eso solo nos mostraría el espacio en memoria.
+
+Si queremos ver el contenido, en java tenemos funciones también. Si le pasamos la clase `Arrays` con el método `.toString` nos convierte el array en un string para que se pueda leer en consola:
+
+```java
+System.out.println(Arrays.toString(arrayObjetos));
+```
+
+> El sábado veremos más utilidades / funciones :L
