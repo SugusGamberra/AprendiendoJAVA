@@ -27,8 +27,8 @@
 | [`M0485.PRG.P005.OperadoresTernarios`](./M0485.PRG.P005.OperadoresTernarios/) | Operadores ternarios, casting y comprobación par-impar | ✅ |
 | [`M0485.PRG.P006.Switch`](./M0485.PRG.P006.Switch/) | Control de flujos con Switch, modularizar switch, uso de métodos | ✅ |
 | [`M0485.PRG.P007.Bucles`](M0485.PRG.P007.Bucles/) | Bucles while, dowhile, each y foreach con control interno (`continue` y `break`) | ✅ |
-| [`M0485.PRG.P008.Menu`](./M0485.PRG.P008.Menu/) | Refactorizar un código (`aplicacion1` con `main` → `aplicacion2` con `main` e `interfaz de usuario`) | ⏳ En desarrollo |
-| [`M0485.PRG.P009.Arrays`](./M0485.PRG.P009.Arrays/) | Todo sobre los arrays | ⏳ En desarrollo |
+| [`M0485.PRG.P008.Menu`](./M0485.PRG.P008.Menu/) | Refactorizar un código (`aplicacion1` con `main` → `aplicacion2` con `main` e `interfaz de usuario`) | ✅ |
+| [`M0485.PRG.P009.Arrays`](./M0485.PRG.P009.Arrays/) | Todo sobre los arrays, arrays multidimensionales y utilidades de JAVa | ⏳ En desarrollo |
 | [`UF01.D08102025.P02AreaTriangulo`](./UF01.D08102025.P02AreaTriangulo/) | Cálculo de área del triángulo | ✅ |
 | [`UF01.D09102025.P03EjemplosJAVA`](./UF01.D09102025.P03EjemplosJAVA/) | Paradigmas imperativo y Orientado a Objetos | ✅ |
 
