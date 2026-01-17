@@ -189,7 +189,7 @@ Si defino una matriz irregular, por ejemplo una de las filas tiene un valor meno
 
 ## 🫦 [`Utilidades`](./arrays/src/ejemplos/C05Utilidades.java)
 
-Si quisiéramos leer directamente un array sin tener que recorrerlo con `bucles`, si ponemos:
+📖 Si quisiéramos leer directamente un array sin tener que recorrerlo con `bucles`, si ponemos:
 
 ```java
 System.out.println(arrayObjetos);
@@ -203,4 +203,53 @@ Si queremos ver el contenido, en java tenemos funciones también. Si le pasamos 
 System.out.println(Arrays.toString(arrayObjetos));
 ```
 
-> El sábado veremos más utilidades / funciones :L
+🔢 Si queremos ordenar un array usamos sort!
+```java
+Arrays.sort(arrayElementos, 1, 6);
+System.out.println(Arrays.toString(arrayElementos));
+```
+
+✍🏻 Si queremos ver el indice de un elemento en un array lo hacemos con binarySearch, **importante**, debe estar ordenado el array de forma ascendente para que lo refleje de forma lógica y real!! Si el valor que buscamos no está en los rangos dados (se puede buscar por rangos también) te saca número negativo:
+```java
+//IMPORTANTE: El algoritmo de búsqueda binaria asume que los elementos están ordenados
+Arrays.sort(arrayEnteros);
+int indice = Arrays.binarySearch(arrayEnteros, 7);
+System.out.println("Indice: " + indice);
+
+//buscamos entre los indices 2 y 5
+indice = Arrays.binarySearch(arrayEnteros, 2, 5, 7);
+		System.out.println("Indice: " + indice);
+```
+
+🪣 Para llenar todo el array con un valor específico de forma automática usamos `fill`, si queremos podemos rellenar tambien desde un indice concreto a otro:
+```java
+// rellenar desde un indice a otro solamente, del indice 3 al 7 concretamente
+Arrays.fill(numeros, 3, 8, 10);
+System.out.println(Arrays.toString(numeros));
+
+// rellenar todos, esto machaca los valores que hubieran antes
+Arrays.fill(numeros, 10);
+System.out.println(Arrays.toString(numeros));
+```
+
+🔁 Si quisiéramos cambiar un valor en un array y usar sus valores en otro array, a diferencia de los valores primitivos, por ser un objeto el array refleja el cambio , veamos la diferencia en una tablita:
+
+**Valores primitivos**: Trabajamos con valores
+| Elemento JAVA | Memoria |
+| :--- | :--- |
+| `Int valor1` | `10` |
+| `Int valor2` | `valor1` |
+| `valor1` | `15` |
+| Resultado `valor1`: | `15` |
+| Resultado `valor2`: | `10` |
+
+**Objetos**: trabajamos con direcciones de memoria
+| Elemento JAVA | Memoria |
+| :--- | :--- |
+| `Int[] enteros1` | `{1, 2, 3, 5, 7}` Dirección de memoria `xx01` |
+| `Int[] enteros2` | `enteros1` Se le está asignando la dirección de memoria `xx01` |
+| `enteros1` | Cambiamos un valor, por ejemplo el índice 2 a 4, se actualiza `xx01` |
+| Resultado: | Mismo contenido en ambos, actualizado en el índice 2 a 4: `{1, 2, 4, 5, 7}` |
+
+> El miércoles veremos como hacer una copia de valor de manera que se cree el objeto y no se almacene en la misma dirección de memoria, que se cree una dirección nueva y tenga valores nuevos
+> Los primitivos se pasan x valor y los objetos x referencia en memoria
