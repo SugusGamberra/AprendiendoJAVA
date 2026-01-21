@@ -251,5 +251,42 @@ System.out.println(Arrays.toString(numeros));
 | `enteros1` | Cambiamos un valor, por ejemplo el índice 2 a 4, se actualiza `xx01` |
 | Resultado: | Mismo contenido en ambos, actualizado en el índice 2 a 4: `{1, 2, 4, 5, 7}` |
 
-> El miércoles veremos como hacer una copia de valor de manera que se cree el objeto y no se almacene en la misma dirección de memoria, que se cree una dirección nueva y tenga valores nuevos
+Si nosotros quisiéramos ver si son iguales en el caso de enteros1 y enteros2 del ejemplo de copiar arrays dentro de [`C05Utilidades`](./arrays/src/ejemplos/C05Utilidades.java) nos daría true. La igualdad no comprueba el contenido, sino la dirección de memoria que en este caso es la misma.
+
+🧑🏻‍🏫 **System.err.println("x");** -> Esto es para imprimir errores en consola
+```java
+if (enteros1 == enteros2) {
+	System.out.println("Iguales");
+} else {
+	System.err.println("No iguales");
+}
+```
+
+Para comproibar el contenido usamos `Arrays.equals`:
+
+```java
+if (Arrays.equals(enteros3, enteros4)) {
+	System.out.println("Mismo contenido");
+} else {
+	System.err.println("Distinto contenido");
+}
+```
+
+> Ahora veremos como hacer una copia de valor de manera que se cree el objeto y no se almacene en la misma dirección de memoria, que se cree una dirección nueva y tenga valores nuevos
 > Los primitivos se pasan x valor y los objetos x referencia en memoria
+
+🗳️ Si quisiéramos copiar un array de enteros en otro y que trabaje de forma independiente lo hacemos con `Arrays.copyOf(array, n)`. Le pasamos a esto el array y la longitud que queremos que tenga, que puede ser la misma que la que estamos copiando o la que queramos nosotros. Recordemos que un array es fijo, pero con la copia, podemos darle una nueva dimensión: `Arrays.copyOf(enteros5, 10)` para asignarle mayor dimensión por ejemplo, `Arrays.copyOf(enteros5, enteros5.length)` para asignarle la misma dimensión que el de referencia. Con esto está en un lugar distinto de memoria, si modifico el array original el array copia no se vería afectado. Es importante esto cuando estemos trabajando con `POO` (objetos)!!
+
+El `copyOf` equivaldría a:
+
+```java
+int posicionActual = 0;
+int[] enteros7 = new int[enteros5.length];
+
+while (posicionActual < enteros5.length) {
+	enteros7[posicionActual] = enteros5[posicionActual];
+    posicionActual++;
+}
+```
+
+> Y yastaria!
