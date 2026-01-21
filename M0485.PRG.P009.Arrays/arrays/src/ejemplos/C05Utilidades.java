@@ -162,5 +162,109 @@ public class C05Utilidades {
 		enteros1[1] = 22;
 		System.out.println("\nEnteros 1: " + Arrays.toString(enteros1));
 		System.out.println("Enteros 2: " + Arrays.toString(enteros2));
+		
+		/* si ahora preguntamos si enteros1 es igual a 2 dira que si
+		 * esto compara el espacio en memoria no el contenido
+		 */
+		
+		if (enteros1 == enteros2) {
+			System.out.println("Dirección de memoria iguales");
+		} else {
+			System.err.println("Dirección de memoria distinta");
+		}
+		
+		/* para comprobar el contenido
+		 * Va a dar lo mismo porque sigue apuntando a la misma direccion de memoria
+		 */
+		
+		if (Arrays.equals(enteros1, enteros2)) {
+			System.out.println("Mismo contenido");
+		} else {
+			System.err.println("Distinto contenido");
+		}
+		
+		System.out.println("\n");
+		
+		/* vamos a crear otro array de enteros3 y enteeros4
+		 * estos no comparten direccion de memoria
+		 * vamos a comprobarlo
+		 * teóricamente enteros3 y 4 estan en distintas direcciones de memoria
+		 * pero el contenido es igual
+		 */
+		
+		int enteros3[] = {1, 2, 3, 4};
+		int enteros4[] = {1, 2, 3, 4};
+		
+		// ver memoria
+		
+		if (enteros3 == enteros4) {
+			System.out.println("Dirección de memoria iguales");
+		} else {
+			System.err.println("Dirección de memoria distinta");
+		}
+		
+		// ver contenido
+		
+		if (Arrays.equals(enteros3, enteros4)) {
+			System.out.println("Mismo contenido");
+		} else {
+			System.err.println("Distinto contenido");
+		}
+		
+		System.out.println("\n");
+		
+		/* copiar un array con destino independiente y que no apunte a la misma
+		 * direccion de memoria del origen con Arrays.copy
+		 */
+		
+		int[] enteros5 = {1, 2, 3, 4, 5, 6, 7};
+		// enteros6 apunta a la misma direccion de memoria:
+		// int[] enteros6 = enteros5;
+		
+		// enteros6 esta en una direccion de memoria distinta:
+		int[] enteros6 = Arrays.copyOf(enteros5, enteros5.length); 
+		
+		// ver memoria
+		
+		if (enteros5 == enteros6) {
+			System.out.println("Dirección de memoria iguales");
+		} else {
+			System.err.println("Dirección de memoria distinta");
+		}
+
+		// ver contenido
+
+		if (Arrays.equals(enteros5, enteros6)) {
+			System.out.println("Mismo contenido");
+		} else {
+			System.err.println("Distinto contenido");
+		}
+
+		System.out.println("\n");
+		
+		// el copy of equivale a:
+		int posicionActual = 0;
+		int[] enteros7 = new int[enteros5.length];
+		
+		while (posicionActual < enteros5.length) {
+			enteros7[posicionActual] = enteros5[posicionActual];
+			posicionActual++;
+		}
+		
+		// ver memoria
+
+		if (enteros5 == enteros7) {
+			System.out.println("Dirección de memoria iguales");
+		} else {
+			System.err.println("Dirección de memoria distinta");
+		}
+
+		// ver contenido
+
+		if (Arrays.equals(enteros5, enteros7)) {
+			System.out.println("Mismo contenido");
+		} else {
+			System.err.println("Distinto contenido");
+		}
 	}
 }
