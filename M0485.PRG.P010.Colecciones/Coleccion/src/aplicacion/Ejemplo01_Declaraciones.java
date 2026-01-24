@@ -2,7 +2,7 @@ package aplicacion;
 
 import java.util.ArrayList;
 
-public class Ejemplo01 {
+public class Ejemplo01_Declaraciones {
 
 	public static void main(String[] args) {
 		/* ## ArrayList
@@ -14,8 +14,8 @@ public class Ejemplo01 {
 		
 		// declaracion arrayList
 		
-		ArrayList<String> listaStrings = new ArrayList<String> ();
-		ArrayList<Integer> listaEnteros = new ArrayList<Integer> ();
+		ArrayList<String> listaStrings;
+		ArrayList<Integer> listaEnteros;
 
 	}
 
