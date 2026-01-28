@@ -1,6 +1,10 @@
 # 🪣 Colecciones en JAVA
 
+---
+
 ## ✏️ ArrayList
+
+---
 
 ### 🧑🏻‍🏫 Qué es?
 
@@ -9,6 +13,8 @@ Es una colección dinámica que pertenece al framework `Collections` de JAVA. Lo
 Un `ArrayList` permite almacenar **objetos** del mismo tipo y crece o se reduce **automáticamente**. Esto implica que una vez definida la dimensión no significa que no pueda crecer. 
 
 Esta clase se usa con `import java.util.ArrayList;`.
+
+---
 
 ### 🩵 Características principales
 
@@ -37,6 +43,8 @@ ArrayList<Integer> listaEnteros;
 
 - **Muchos métodos útiles**: `add`, `remove`, `contains`, etc.
 
+---
+
 ### ✍🏻 Declaración e inicialización de la arrayList:
 
 Una arraylist no tiene dimensión acotada.
@@ -58,6 +66,8 @@ ArrayList<String> listaStrings = new ArrayList<String> ();
 ArrayList<Integer> listaEnteros = new ArrayList<Integer> (
 	List.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
 ```
+
+---
 
 ### 🦍 Métodos útiles
 
@@ -86,6 +96,8 @@ if (lista.isEmpty()) {
     //bloque de codigo
 }
 ```
+
+---
 
 ### 🫦 Recorrer un Array List
 
@@ -128,6 +140,8 @@ while (posicion < lista.size()) {
 > 🧑🏻‍🏫 **IMPORTANTE**: A la hora de recorrer listas, sería importante añadir un control con un condicional para asegurarse que las listas no están vacias ( `if (lista != null) { // recorrido con el bucle que sea } else { System.out.println("La lista es null"); }` ).
 > Podríamos controlar esto de mejor forma si tenemos en cuenta ambos casos: null y listas vacías: `if (lista == null) { System.out.println("lista null"); } else if (lista.isEmpty()) { System.out.println("Lista vacia"); } else { // que ejecute el bloque de codigos }`.
 
+---
+
 ### 🔢 Ordenacion
 
 - *Orden ascendente*:
@@ -152,4 +166,83 @@ for (String cadena : lista) {
 }
 ```
 
-> Sigo el miercoles :3
+> Las colecciones se usan mucho, son mas sensibles que los arrays :3
+
+---
+
+### 👷🏻‍♀️ CRUD
+
+Son las siglas de **Create, Read, Update y Delete**. Esto se verá mucho, se refiere al mantenimiento de una entidad.
+
+#### 🌍 Agregar (Create)
+
+Usamos el método `.add()`. A diferencia de los arrays clásicos (`[]`) , el `ArrayList` es dinámico.
+
+* **`lista.add(valor)`**: Añade al final.
+* **`lista.add(indice, valor)`**: Inserta en una posición específica y **desplaza** los elementos siguientes hacia la derecha.
+
+> **Diferencia clave con Arrays:** En un array normal de tamaño fijo, si intentas meter un valor en una posición ocupada (ej: `array[1] = -10`), el valor anterior **se pierde (se sobrescribe)**. En un `ArrayList`, el valor anterior **se mueve**, no se pierde.
+
+#### 📖 Leer y Recorrer (Read)
+
+Para obtener datos puntuales:
+* `lista.get(indice)`: Devuelve el elemento en esa posición.
+* `lista.getFirst()` / `lista.getLast()`: Primer y último elemento (Java 21+).
+
+Para recorrer toda la lista, lo estándar es usar un bucle `foreach` verificando antes que la lista no sea `null` ni esté vacía:
+
+```java
+if (listaNumeros != null && !listaNumeros.isEmpty()) {
+    for (int i : listaNumeros) {
+        System.out.println(i);
+    }
+}
+```
+
+#### 🦭 Modificar (Update)
+
+Para cambiar el valor de una posición ya existente usamos `.set()`.
+
+```java
+//cambia el valor de la pos 4 por un 44
+listaNumeros.set(4, 44);
+```
+
+#### 🗑️ Eliminar (Delete)
+
+Podemos borrar por indice o referencia:
+
+* `lista.remove(index)`: Borra lo que hay en ese indice
+* `lista.removeFirst()` / `lista.removeLast()`: Borra lo del principio o final.
+
+#### ⚠️ El drama con la modificacion recurrente
+
+Si intentamos eliminar un elemento de la lista **dentro de un bucle `for-each`**  que esta recorriendo esa misma lista, JAVA lanzara una excepcion `ConcurrentModificationException`. **Por qué?** Porque el `for-each` pierde la cuenta de por donde iba si le cambias el tamaño d la lista bajo los pies.
+
+```java
+// esto da error si intentas borrar
+for (int valor : listaNumeros) {
+	if (valor == 2) {
+		listaNumeros.remove(posicion); //aqui peta
+	}
+}
+```
+
+La **solucion** es el uso del `Iterator`. Para modificar la estructura (borrar elementos) mientras recorremos, **debemos usar un `iterador`. Esto es un objeto que actúa como intermediario y controla el cursor de la lista de forma segura.
+
+```java
+Iterator<Integer> iterador = listaNumeros.iterator();
+
+while(iterador.hasNext()) {
+	int valor = iterador.next();
+
+	if (valor == 2) {
+		//borramos usando el propio iterador, NO la lista
+		iterador.remove();
+	}
+}
+```
+
+---
+
+> El sabado seguira creciendo esto
