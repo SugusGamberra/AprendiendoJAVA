@@ -45,7 +45,7 @@ ArrayList<Integer> listaEnteros;
 
 ---
 
-### ✍🏻 Declaración e inicialización de la arrayList:
+### ✍🏻 [`Declaración`](./Coleccion/src/aplicacion/Ejemplo01_Declaraciones.java) e [`inicialización`](./Coleccion/src/aplicacion/Ejemplo02_Inicializacion.java) de la arrayList:
 
 Una arraylist no tiene dimensión acotada.
 
@@ -99,7 +99,7 @@ if (lista.isEmpty()) {
 
 ---
 
-### 🫦 Recorrer un Array List
+### 🫦 [Recorrer un Array List](./Coleccion/src/aplicacion/Ejemplo03_Recorrido.java)
 
 El mejor método es usar un for each.
 
@@ -142,7 +142,7 @@ while (posicion < lista.size()) {
 
 ---
 
-### 🔢 Ordenacion
+### 🔢 [Ordenacion](./Coleccion/src/aplicacion/Ejemplo04_Ordenacion.java)
 
 - *Orden ascendente*:
 ```java
@@ -170,7 +170,7 @@ for (String cadena : lista) {
 
 ---
 
-### 👷🏻‍♀️ CRUD
+### 👷🏻‍♀️ [CRUD](./Coleccion/src/aplicacion/Ejemplo05_CRUD.java)
 
 Son las siglas de **Create, Read, Update y Delete**. Esto se verá mucho, se refiere al mantenimiento de una entidad.
 
@@ -245,4 +245,41 @@ while(iterador.hasNext()) {
 
 ---
 
-> El sabado seguira creciendo esto
+### 🔎 [Búsquedas](./Coleccion/src/aplicacion/Ejemplo06_Busquedas.java)
+
+Para buscar elementos específicos en tu lista usamos métodos como:
+
+| Método | Qué hace | Qué devuelve | Ejemplo |
+| :--- | :--- | :--- | :--- |
+| `.contains("elemento")` | Pregunta "esta esto en la lista?" | `boolean` (true/false) | `ciudades.contains("Sevilla")` |
+| `.indexOf("Objeto")` | Pregunta: "en qué posición está?" | `int` (índice o -1) | `ciudades.indexOf("Cancun")` |
+
+> 💡 **Nota**: Si `.indexOf` devuelve **-1** significa que el elemento **NO** está en la lista!!
+
+---
+
+### 👩🏻‍⚖️ [Conversiones](./Coleccion/src/aplicacion/Ejemplo07_Conversiones.java)
+
+A veces tienes datos en un `ArrayList` (flexible) pero una librería vieja te pide un `Array` normal (fijo), o al revés, pues esto te viene dpm para hacer las conversiones y evitar el coñaz* de hacerlo de forma manual!!
+
+#### ➡️ De ArrayList a Array
+
+No uses un bucle `for` manual (es código "sucio" y lento de escribir). Usa el método directo:
+
+```java
+// Truco: new String[0] le dice a Java el tipo de dato, él calcula el tamaño solo.
+String[] miArray = listaCiudades.toArray(new String[0]);
+```
+
+#### ⬅️ De Array a ArrayList
+
+Usamos el trucazo de `Arrays.asList`:
+
+```java
+// Convierte el array en lista en una sola línea
+ArrayList<String> miLista = new ArrayList<>(Arrays.asList(arrayCiudades));
+```
+
+---
+
+> Y hasta aqui con el tema arrayList!! Un besote!!
