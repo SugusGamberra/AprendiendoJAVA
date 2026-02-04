@@ -22,7 +22,6 @@ Cuando creamos ese "molde" (el archivo `.java`), definimos dos cosas:
 > * **Clase** = El molde de galletas.
 > * **Objeto** = La galleta ya horneada (puedes comértela).
 > * **Instanciar** = La acción de usar el molde para crear la galleta (`new`).
-> * **Dominio de la aplicación** = Se refiere a aquellas clases o partes del código que representan entidades de la aplicación. En nuestro ejemplo01 donde trabajamos con datos de una escuela como clases de alumnos, profesores, asignaturas...
 
 Veremos **clases de procesos** donde tenemos métodos, variables, propiedades y demás en ellas.
 
@@ -90,6 +89,24 @@ Con esto creamos el objeto, le damos vida, y usamos `new` para ello.
 Alumno pepe = new Alumno(); // Nace Pepe
 pepe.setNombre("Pepe");     // Le damos nombre usando el Setter (con validación)
 ```
+
+---
+
+## 🎥 Dominio
+
+El **dominio de la aplicación** se refiere a aquellas clases o partes del código que representan entidades de la aplicación. En nuestro ejemplo01 donde trabajamos con datos de una escuela como clases de alumnos, profesores, asignaturas... Si tuvieramos una app para un hospital el dominio serían los pacientes, medicos, consultas...
+
+Esto habla del qué trata tu app digamos. En **POO** usamos las clases para encerrar ese dominio. Estas clases **solo contienen la lógica del negocio** no cosas tecnicas como conectarse a una BBDD o imprimir un boton en pantalla!!
+
+Esto más adelante veremos que está en el centro del todo, es lo más importante. Si mañana decidieras dejar de usar una bbdd SQL y pasar a archivos de texto, el **dominio** (la regla de que un alumno p.ej no puede tener una nota mayor a 10) **NO** debería cambiar.
+
+Para diferenciar el tocino de la velocidad voy a hacer una tablita, q lo visual siemrpe ayuda 🫦🫦
+
+| Concepto | Qué es realmente  | Ejemplo |
+| :-- | :-- | :-- |
+| **Clase** | Estructura técnica | `public class Alumno {...}` |
+| **Dominio** | Concepto del negocio que la **clase** representa | El hecho de que un **Alumno** se puede matricular |
+| **Infraestructura** | Lo que **NO** es dominio (royos tecnicos) | Guardar ese **Alumno** en una BBDD **MySQL** |
 
 ---
 
