@@ -22,6 +22,11 @@ Cuando creamos ese "molde" (el archivo `.java`), definimos dos cosas:
 > * **Clase** = El molde de galletas.
 > * **Objeto** = La galleta ya horneada (puedes comértela).
 > * **Instanciar** = La acción de usar el molde para crear la galleta (`new`).
+> * **Dominio de la aplicación** = Se refiere a aquellas clases o partes del código que representan entidades de la aplicación. En nuestro ejemplo01 donde trabajamos con datos de una escuela como clases de alumnos, profesores, asignaturas...
+
+Veremos **clases de procesos** donde tenemos métodos, variables, propiedades y demás en ellas.
+
+Veremos también **clases de tipo entidad** que muestran datos estructurados que tienen que ver con el **dominio de la aplicación**.
 
 ---
 
@@ -38,6 +43,7 @@ Para acceder a los datos privados usamos estos intermediarios. Aquí es donde **
 
 - **GET (Dame)**: Para leer el valor.
 - **SET (Toma/Modifica)**: Para cambiar el valor. ¡Aquí validamos!
+- **this.**: Distingue el parámetro del nombre de la propiedad de la clase.
 
 ```java
 public void setNotaAcceso(float notaAcceso) {
@@ -85,4 +91,55 @@ Alumno pepe = new Alumno(); // Nace Pepe
 pepe.setNombre("Pepe");     // Le damos nombre usando el Setter (con validación)
 ```
 
-> Continuamos el miercoles :3
+---
+
+## 📧 @Override
+
+Damos contenido a un metodo que existe en una clase de la cual heredamos (extends Object). Todos los metodos publicos es como si formaran parte de la clase profesor aunque no esten definidos. Esto lo encontramos cuando hacemos clic derecho en el IDE **Eclipse** y le damos a `Source` - `Generate` - `toString()`.
+
+---
+
+## 🧬 Herencia
+
+La herencia en JAVA es **simple**: no podemos heredar de más de una clase a la vez. Un alumno hereda todo lo de persona y a su vez todo lo que persona herede.
+
+---
+
+## 👷🏻‍♀️ Constructor
+
+Esto es como el "trámite de nacimiento" de un objeto.  Cuando creamos un objeto nuevo (con `new`), java necesita saber "como mondá quiere q nazca este objeto?". El constructor es ese bloquecito de código que **prepara** el objeto para que este ready pa usarse.
+
+Para no confundirnos con otros metodos, el constructor siempre cumple con:
+1. Se llama **IGUAL** que la clase, case sensitive.
+2. **NO** devuelve nada (ni `void`, ni `int`, ni na de na)
+3. Se **ejecuta automaticamente** en cunato usas `new`.
+
+```java
+public class Personaje {
+    /* por ejemplo, una clase pa crear pjs de videojuegos
+    aqui tenemos atributos y caracteristicas
+    */
+
+    String nombre;
+    int nivel;
+
+    // CONSTRUCTOR
+    // Fíjate: se llama igual que la clase y no tiene 'void'
+    public Personaje(String nombreRecibido, int nivelRecibido) {
+        this.nombre = nombreRecibido; // Asignamos el nombre
+        this.nivel = nivelRecibido;   // Asignamos el nivel
+    }
+}
+```
+
+Y cuando vas pal `main` lo llamamos al cosntructor asi:
+
+```java
+Personaje miSacerdote = new Personaje("Aeryndra", 11);
+```
+
+Y es aqui donde java dice enga, creado el **espacio en memoria** pa tu pj. Ejecuto el constructor pa ponerle su nombre y su nivel.
+
+Si no ponemos constructores java te crea uno **invisible** que está vacío, pero en cuanto tu escribes uno propio ya java obv no te pone el suyo automatico.
+
+Sirve para **inicializar los atributos del objeto** (darles valor inicial) y  salta solo al ahcer el `new`.

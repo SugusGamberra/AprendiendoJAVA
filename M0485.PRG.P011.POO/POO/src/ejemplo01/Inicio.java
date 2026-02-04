@@ -7,7 +7,12 @@ public class Inicio {
 		/* si quiero definir una varaiable sobre la clase alumno
 		 * al igual q con scanner, como es un elemento complejo
 		 * le metemos new
+		 * 
+		 * Estos son datos estructurados, no datos primitivos como
+		 * el de int valor 1 = 12;
 		 */
+		
+		int valor1 = 12;
 		
 		Alumno pepe = new Alumno();
 		
@@ -20,6 +25,16 @@ public class Inicio {
 		System.out.println(pepe.getNombre());
 		
 		System.out.println(pepe.toString());
+		
+		Profesor joan = new Profesor();
+		
+		joan.setNombre("Joan");
+		
+		joan.setApellido1("Gordi");
+		
+		joan.setTitulacionHabilitante("ADE");
+		
+		System.out.println(joan.toString());
 
 	}
 

@@ -1,12 +1,28 @@
 package ejemplo01;
 
+/* esto son clases de procesos, xk tenemos metodos en ellas,
+ * propiedades y demas variables
+ * 
+ * Existen clases mas de tipo entidad que muestran unos datos estructurados
+ * que tienen que ver con el dominio de la app
+ * 
+ * El dominio en estos ejemplos son las clases como alumnos, profesores,
+ * podriamos hacer una de asignatuars...
+ */
+
 public class Alumno {
 
+	/* protegemos estas clases de que se le añada info de forma
+	 * desestructurada
+	 * Controlamos con getters y setters que datos entran
+	 */
 	private String dni;
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
 	private float notaAcceso;
+	
+	
 	public String getDni() {
 		return dni;
 		
@@ -68,9 +84,5 @@ public class Alumno {
 		return "Alumno [dni=" + dni + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2
 				+ ", notaAcceso=" + notaAcceso + "]";
 	}
-	
-	
-	
-	
 	
 }
