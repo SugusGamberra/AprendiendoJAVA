@@ -160,3 +160,39 @@ Y es aqui donde java dice enga, creado el **espacio en memoria** pa tu pj. Ejecu
 Si no ponemos constructores java te crea uno **invisible** que está vacío, pero en cuanto tu escribes uno propio ya java obv no te pone el suyo automatico.
 
 Sirve para **inicializar los atributos del objeto** (darles valor inicial) y  salta solo al ahcer el `new`.
+
+---
+
+## 🕴🏻Static vs No Static
+
+Diferenciamos entre lo que es tuyo propio (como tu karma e.e) y lo que todos compartimos (la energia universal 🙂‍↕️🙂‍↕️)
+
+* **No-Static (Instancia)**: Son tus atributos personales, por ejemplo, tu `nombre`. Que te llames Paca no hace que tu vecina se llame Paca, cada objeto tiene su propia copia: `public String nombre;`
+* **Static (Clase)**: Es una propiedad compartida, una **memoria colectiva**. Pertenece a la CLASE (al molde) no a un objeto concreto! Por ejemplo, `contadorPersonasCreadas`, si creamos 3, ese numero vale 3 para TODOS. Si yo lo cambio se actualiza para todos los objetos a la vez. Es como si todos estuvieran conectados telepaticamente para ese dato: `public static int contador;`.
+
+Si usas **static** no necesitar hacer `new` para acceder a ese dato. Puedes llamarlo directamente por el nombre de la clase `Persona.contador`.
+
+---
+
+## 🫡 Orden de la creación (constructores y herencias)
+
+Cuando creamos un objeto de una clase hija (p.ej `Alumno`) JAVA no empieza la casa por el tejao. Siempre tira **desde lo más general a lo más específico**.
+
+Para que tú existas como `Alumno` primero tiene que haber existido una `Persona`. No puedes ser estudiante si no eres persona antes vaya.
+
+El ritual de nacimiento 🙂‍↕️ sigue este orden:
+1. **Primero el padre (`Persona`)**: Se ejecuta el constructor de `Persona` (se crea el dni, el nombre, etc)
+2. **Luego el Hijo (`Alumno`)**: Una vez la base esta lista se ejecuta el constructor de `Alumno` y se añaden las cosas especificas (nota, curso, etc)
+
+En el tecletecle se hace con `super()`:
+
+```java
+public Alumno() {
+    super(); //llama al constructor Persona
+    // aki ya se configura todo lo demas
+}
+```
+
+> Si no escribes `super()` Java es to listo y lo intenta poner por ti de forma invisible al inicio del constructor, pero bueno es saber que esta ahi :P
+
+---

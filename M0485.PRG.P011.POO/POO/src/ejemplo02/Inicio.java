@@ -58,6 +58,10 @@ public class Inicio {
 		Profesor montse0 = new Profesor();
 		Profesor montse1 = new Profesor("Montse");
 		Profesor montse2 = new Profesor("Montse", "García");
+		
+		// para sacar ambas cosas en un mismo print concatenamos
+		System.out.println(montse2.getNombre() + " " + montse2.getApellido2());
+		
 		// Profesor montse3 = new Profesor("Montse", "García", "Fernández");
 
 		// Scanner scanner = new Scanner(System.in);
