@@ -1,6 +1,7 @@
 package unificacion;
 
 // (Del Ejemplo 01 y 02)
+// esto siguiente es lo q decia que java ponia como predeterminado si no le indicas
 //public class Profesor extends Object {
 public class Profesor extends Persona {
 

@@ -194,5 +194,3 @@ public Alumno() {
 ```
 
 > Si no escribes `super()` Java es to listo y lo intenta poner por ti de forma invisible al inicio del constructor, pero bueno es saber que esta ahi :P
-
----
