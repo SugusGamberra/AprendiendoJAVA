@@ -1,5 +1,5 @@
 package animales.familias;
 
-public abstract class Pescado extends Animal {
+public abstract class Pescado extends Oviparo {
 
 }

@@ -8,6 +8,7 @@ public abstract class Animal {
 	 * Una sera el nombre y para identificarlos un codigo
 	 * identificativo
 	 * 
+	 * ESto son 2 propiedades (codigoIdentificativo y nombre)
 	 */
 	
 	private int codigoIdentificativo;
@@ -39,15 +40,21 @@ public abstract class Animal {
 	 * objetos xk no puede hacer new porque tiene partes no concretadas
 	 * ni implementadas y java no sabria que ejecutar si llamaramos a
 	 * getSonido. Es un nivel bastante inconcreto.
+	 * 
+	 * Estos metodos se definen aqui a nivel de animal para que consten y
+	 * se ponen como abstractos, nos obliga a definir la clase como
+	 * abstracta. Si intentara crear un objeto de animal y llamara al
+	 * metodo getSonido java no sabria que hacer xk no hay implementacion
+	 * del metodo
 	 */
 	
 	public abstract String getSonido();
 	
 	public abstract String getDieta();
 	
-	public int getPromedioAlturaVuelo() {
-		return 0;
-	}
+//	public int getPromedioAlturaVuelo() {
+//		return 0;
+//	}
 	
 	/* con esto me aparecen errores xk lo hemos puesto d ultimas
 	 * x definirlo despues, asi q toca implementarlo en todos lados

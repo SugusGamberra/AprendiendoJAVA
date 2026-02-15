@@ -1,9 +1,10 @@
 package animales.especificos;
 
 import animales.capacidades.IDesplazamientoAereo;
+import animales.capacidades.IEntrenable;
 import animales.familias.Ave;
 
-public class Halcon extends Ave implements IDesplazamientoAereo {
+public class Halcon extends Ave implements IDesplazamientoAereo, IEntrenable {
 
 	@Override
 	public String getSonido() {
@@ -21,6 +22,24 @@ public class Halcon extends Ave implements IDesplazamientoAereo {
 	public int getPromedioVelocidadVuelo() {
 		// TODO Auto-generated method stub
 		return 100;
+	}
+
+	@Override
+	public int getPromedioAlturaVuelo() {
+		// TODO Auto-generated method stub
+		return 20;
+	}
+
+	@Override
+	public int getPeriodoIncubacion() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String getHabilidades() {
+		// TODO Auto-generated method stub
+		return "Buscar presas";
 	}
 
 	/* los 3 mamiferos que tenemos (ballena, murcielago y perro), desde

@@ -1,9 +1,10 @@
 package animales.especificos;
 
 import animales.capacidades.IDesplazamientoTerrestre;
+import animales.capacidades.IEntrenable;
 import animales.familias.Mamifero;
 
-public class Perro extends Mamifero implements IDesplazamientoTerrestre {
+public class Perro extends Mamifero implements IDesplazamientoTerrestre, IEntrenable {
 
 	@Override
 	public int getPeriodoLactancia() {
@@ -27,6 +28,12 @@ public class Perro extends Mamifero implements IDesplazamientoTerrestre {
 	public int getPromedioVelocidadCorriendo() {
 		// TODO Auto-generated method stub
 		return 50;
+	}
+
+	@Override
+	public String getHabilidades() {
+		// TODO Auto-generated method stub
+		return "Guiar personas invidentes";
 	}
 
 	/* primero tenemos que importarlo

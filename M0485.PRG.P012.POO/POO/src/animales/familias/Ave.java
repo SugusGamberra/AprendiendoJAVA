@@ -1,6 +1,6 @@
 package animales.familias;
 
-public abstract class Ave extends Animal {
+public abstract class Ave extends Oviparo {
 	
 	/* tambien la ponemos abstracta
 	 * 

@@ -28,6 +28,12 @@ public class Murcielago extends Mamifero implements IDesplazamientoAereo {
 		// TODO Auto-generated method stub
 		return 90;
 	}
+
+	@Override
+	public int getPromedioAlturaVuelo() {
+		// TODO Auto-generated method stub
+		return 10;
+	}
 	
 	/* digamos q en comun ballena murcielago perro todos emiten sonido
 	 * tienen codigo identificativo (como su nombre en latin( o el
