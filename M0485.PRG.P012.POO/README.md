@@ -64,7 +64,7 @@ public class Murcielago extends Mamifero implements IDesplazamientoAereo {
 
 ---
 
-## Polimorfismo
+## 🐑 Polimorfismo
 
 Aqui viene la utilidad de esto. La magia ocurre en `main` donde creamos un metodo que acepte cualquier cosa que vuele, sin importarle si es un periquito, un murciélago o un avión!
 
@@ -77,7 +77,3 @@ private static void vuela(IDesplazamientoAereo volador) {
 * `vuela(halcon)`: Funciona
 * `vuela(murcielago)`: Funciona
 * `vuela(perro)`: Error d compilacion (el perro no firmo el contrato d vuelo)
-
----
-
-> Seguimos el proximo dia!
