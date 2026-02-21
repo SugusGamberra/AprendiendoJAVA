@@ -30,7 +30,11 @@
 | [`M0485.PRG.P008.Menu`](./M0485.PRG.P008.Menu/) | Refactorizar un código (`aplicacion1` con `main` → `aplicacion2` con `main` e `interfaz de usuario`) | ✅ |
 | [`M0485.PRG.P009.Arrays`](./M0485.PRG.P009.Arrays/) | Todo sobre los arrays, arrays multidimensionales y utilidades de JAVa | ✅ |
 | [`M0485.PRG.P010.Colecciones`](./M0485.PRG.P010.Colecciones/) | Todo sobre los ArrayList! | ✅ |
-| [`M0485.PRG.P011.POO`](./M0485.PRG.P011.POO/) | Todo sobre **PROGRAMACION ORIENTADA A OBJETOS** | ⌛ En proceso |
+| [`M0485.PRG.P011.POO`](./M0485.PRG.P011.POO/) | Todo sobre **PROGRAMACION ORIENTADA A OBJETOS** | ✅ |
+| [`M0485.PRG.P012.POO`](./M0485.PRG.P012.POO/) | Clases, interfaces, jerarquias, polimorfismo de **POO** | ✅ |
+| [`M0485.PRG.P013.POO.Modificadores`](./M0485.PRG.P013.POO.Modificadores/) | Modificadores de **POO** | ✅ |
+| [`M0485.PRG.P014.GestionCadenas`](./M0485.PRG.P014.GestionCadenas/) | Gestión de cadenas: `String` vs `StringBuilder` | ✅ |
+| [`M0485.PRG.P015.Excepciones`](./MO485.PRG.P015.Excepciones/) | Todo sobre `excepciones` en JAVA | ⌛ En proceso |
 | [`UF01.D08102025.P02AreaTriangulo`](./UF01.D08102025.P02AreaTriangulo/) | Cálculo de área del triángulo | ✅ |
 | [`UF01.D09102025.P03EjemplosJAVA`](./UF01.D09102025.P03EjemplosJAVA/) | Paradigmas imperativo y Orientado a Objetos | ✅ |
 
