@@ -1,0 +1,6 @@
+Testeo
+Primera ejecucion de testeo
+Alcuciles con chicharos
+Testeo
+Segunda ejecucion probando ponerle true a FileWriter para que AÑADA lineas al fichero existente
+Pescadito frito
