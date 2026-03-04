@@ -84,3 +84,37 @@ String contenidoFinal = sb.toString();
 fileReader.close();
 bufferedReader.close();
 ```
+
+---
+
+## ⚙️ Fichero de propiedades
+
+Hasta ahora hemos **hardcodeado**, es decir, hemos puesto dentro del código las rutas y tal. Ahora vamos a aprender a hacer un **archivo de propiedades** que nos permita buscar la ruta que tengamos dentro para escribir o leer un fichero.
+
+### Config externa
+
+En vez de escribir las rutas directamente en el código usamos **archivo** llamado [`config.properties`](./TextFiles.v01/config.properties) con una estructura definida. Esto permite cambiar el comportamiento del programa (como la ruta del archivo o si queremos sobreescribir datos) sin necesidad de volver a compilar el código!
+
+- `ruta`: Define dónde se encuentra el archivo.txt
+- `agregar`: Un flag (1 o 0 para sí y no) que indica si queremos añadir texto al final del archivo o borrar lo anterior.
+
+### [Flujo de trabajo](./TextFiles.v01/src/configuraciones/MiConfiguracion.java)
+
+- **Carga de propiedades**: Se usa la clase `java.util.Properties` para mapear el archivo de texto a pares clave-valor.
+- **Uso de Buffers**: Para la escritura implementamos `BufferedWriter`. Es más óptimo ya que no "ataca" el disco por cada carácter como vimos, sino que acumula datos en memoria antes d escribir.
+- **Persistencia**: El método `escribir` recibe un boolean (`append`) que determina si el `FileWriter` debe posicionarse al final del archivo o empezar desde 0.
+
+> ⚠️ **TIP**: En el código proporcionado x el profe a la hora de agregar ponemos `== "1"`, esto puede dar dolor d cabeza, yo voy a respetar el código tal cual, pero si me dejas a mi sola uso `.equals()`xk en JAVA el `==` a veces falla y da x saco:
+
+```java
+public boolean getAgregar() {
+    String agregar = properties.getProperty("agregar", "0");
+    //esto es lo q yo haria:
+    if ("1".equals(agregar)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+```
+

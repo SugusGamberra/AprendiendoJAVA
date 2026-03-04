@@ -3,17 +3,30 @@ package aplicacion;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import configuraciones.MiConfiguracion;
+
 public class Main {
 
+	// ruta fichero no hardcodeada:
+	private static String RUTA1 = null;
+	private static boolean AGREGAR = false;
+		
 	public static void main(String[] args) {
 
+		MiConfiguracion mc = new MiConfiguracion();
+		RUTA1 = mc.getRutaFichero();
+		AGREGAR = mc.getAgregar();
+		
+		System.out.println(RUTA1 + " " + AGREGAR);
+		
 		//escribir();
 		//testEscribir();
 		testLeer();
 
 	}
-	
-	private static final String RUTA1 = "C:\\Users\\sugus\\Documents\\GitHub\\AprendiendoJAVA\\M0485.PRG.P016.TextFiles.v01\\fichero1.txt";
+
+	// ruta fichero hardcodeada
+	//private static final String RUTA1 = "C:\\Users\\sugus\\Documents\\GitHub\\AprendiendoJAVA\\M0485.PRG.P016.TextFiles.v01\\fichero1.txt";
 	private static final String RUTA = "C:\\Users\\sugus\\Documents\\GitHub\\AprendiendoJAVA\\M0485.PRG.P016.TextFiles.v01\\fichero.txt";
 	
 	private static void escribir() {
@@ -35,7 +48,7 @@ public class Main {
 		lineas.add(scanner.nextLine());
 		
 		// llamamos al metodo y le pasamos la ruta y el contenido
-		escribirFichero.escribir(RUTA1, lineas);
+		escribirFichero.escribir(RUTA1, AGREGAR, lineas);
 	}
 	
 	private static void testEscribir() {
@@ -51,7 +64,7 @@ public class Main {
 		System.out.println("Cual es tu comida fav?");
 		lineas.add(scanner.nextLine());
 		
-		escribirFichero.escribir(RUTA, lineas);
+		escribirFichero.escribir(RUTA, true, lineas);
 	}
 	
 	private static void testLeer() {

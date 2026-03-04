@@ -7,12 +7,16 @@ import java.util.ArrayList;
 
 class EscribirFichero {
 
-	void escribir(String rutaFichero, ArrayList<String> contenido) {
+	void escribir(String rutaFichero, boolean sobreescribir, ArrayList<String> contenido) {
 		
 		try {
 			
 			//con true no sobreescribimos, se añade lo nuevo al fichero que ya existe
-			FileWriter fileWriter = new FileWriter(rutaFichero, true);
+			//hardcodeado
+//			FileWriter fileWriter = new FileWriter(rutaFichero, true);
+			
+			//sin hardcodear
+			FileWriter fileWriter = new FileWriter(rutaFichero, sobreescribir);
 			
 			// clase q tira menos del disco
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
