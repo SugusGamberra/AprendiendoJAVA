@@ -34,7 +34,8 @@
 | [`M0485.PRG.P012.POO`](./M0485.PRG.P012.POO/) | Clases, interfaces, jerarquias, polimorfismo de **POO** | ✅ |
 | [`M0485.PRG.P013.POO.Modificadores`](./M0485.PRG.P013.POO.Modificadores/) | Modificadores de **POO** | ✅ |
 | [`M0485.PRG.P014.GestionCadenas`](./M0485.PRG.P014.GestionCadenas/) | Gestión de cadenas: `String` vs `StringBuilder` | ✅ |
-| [`M0485.PRG.P015.Excepciones`](./MO485.PRG.P015.Excepciones/) | Todo sobre `excepciones` en JAVA | ⌛ En proceso |
+| [`M0485.PRG.P015.Excepciones`](./MO485.PRG.P015.Excepciones/) | Todo sobre `excepciones` en JAVA | ✅ |
+| [`M0485.PRG.P016.TextFiles`](./M0485.PRG.P016.TextFiles.v01/) | Escritura y lectura de ficheros con método **IO** y **NIO*** | ⌛ En proceso |
 | [`UF01.D08102025.P02AreaTriangulo`](./UF01.D08102025.P02AreaTriangulo/) | Cálculo de área del triángulo | ✅ |
 | [`UF01.D09102025.P03EjemplosJAVA`](./UF01.D09102025.P03EjemplosJAVA/) | Paradigmas imperativo y Orientado a Objetos | ✅ |
 
