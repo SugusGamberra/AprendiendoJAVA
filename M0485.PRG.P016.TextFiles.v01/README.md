@@ -5,7 +5,7 @@
 
 ---
 
-## [Escribir fichero](./TextFiles.v01/src/aplicacion/EscribirFichero.java)
+## ✍🏻 [Escribir fichero](./TextFiles.v01/src/aplicacion/EscribirFichero.java)
 
 Usamos `FileWriter` para escribir.
 
@@ -53,7 +53,7 @@ bufferedWriter.close();
 
 ---
 
-## [Leer Fichero](./TextFiles.v01/src/aplicacion/LeerFichero.java)
+## 👓 [Leer Fichero](./TextFiles.v01/src/aplicacion/LeerFichero.java)
 
 Para leer ficheros, aplicamos la misma lógica de optimización que al escribir. En lugar de leer directamente del disco con `FileReader`, lo envolvemos en un `BufferedReader` para que la lectura sea mucho más rápida.
 
@@ -118,3 +118,47 @@ public boolean getAgregar() {
 }
 ```
 
+---
+
+# Path (NIO)
+
+Hemos dejado atrás las clases antiguas de Java (el paquete `java.io` clásico) para usar **NIO (New I/O)**, que está en el paquete `java.nio`. Es más moderno, rápido y flexible.
+
+* `Path` y `Paths`: Es el sustituto moderno de la antigua clase `File`. Representa la ruta del archivo en tu disco duro. Se crea facilísimo: `Path path = Paths.get(rutaFichero);`
+
+---
+
+## ✍️ [Escribir Ficheros](./TextFiles.v02/src/aplicacion/EscribirFichero.java) (`Files.newBufferedWriter`)
+
+Para escribir, hemos usado un `BufferedWriter`. La ventaja es que **NIO** te permite instanciarlo de golpe con un método estático, pasándole toda la configuración de una vez.
+
+**Conceptos clave al escribir**:
+
+* **Encoding explícito (BUENA PRÁCTICA)**: Con `StandardCharsets.UTF_8`. Esto le dice a Java exactamente cómo traducir los caracteres a bytes. Si no lo pones, el sistema usa el suyo por defecto y al abrirlo en otro PC con otra codificación, las tildes o las 'ñ' se verán como símbolos raros.
+* `StandardOpenOption`: Son las "reglas" de cómo se abre el archivo:
+  * `CREATE`: Si el archivo no existe, lo crea.
+  * `APPEND`: Añade el texto al final del archivo sin borrar lo que ya hay.
+  * `TRUNCATE_EXISTING`: Machaca el archivo; borra lo que había y escribe lo nuevo.
+* `newLine()`: En lugar de meter un `\n` a mano (que en Windows a veces da guerra), el `BufferedWriter` tiene este método que mete el salto de línea perfecto según el sistema operativo en el que estés.
+
+---
+
+## 📖 [Leer Ficheros](./TextFiles.v02/src/aplicacion/LeerFichero.java) (`Files.newBufferedReader`)
+
+La lectura es súper parecida, pero usando un `BufferedReader`.
+
+**Conceptos clave al leer**:
+
+* **El bucle de lectura**: Usamos el clásico `while((linea = bufferedReader.readLine()) != null)`. Esto lee línea por línea hasta que se queda sin texto (y devuelve null).
+* `StringBuilder`: Super importante! En vez de ir sumando `String` con el símbolo `+` (lo cual consume muchísima memoria en Java), cogemos `StringBuilder` y su método `.append()`. Es la forma más óptima de juntar todo el texto del fichero en una sola variable.
+
+---
+
+## ⚙️ [Archivos de Propiedades](./TextFiles.v02/src/configuraciones/MiConfiguracion.java) (`.properties`)
+
+Esto es vital para no hardcodear rutas, contraseñas o configuraciones.
+
+* **Para qué sirve?**: Sacas variables como la ruta del archivo (`C:/.../fichero.txt`) a un archivo de texto externo ([`config.properties`](./TextFiles.v02/config.properties)). Así, si cambias de ordenador, solo modificas el archivo `.properties` sin tener que tocar el código Java ni volver a compilar.
+* **Clase `Properties`**: Es una clase especial de Java que funciona como un diccionario. Le pasas el lector del archivo (`properties.load(bufferedReader)`) y luego sacas los valores con `properties.getProperty("clave", "valor_por_defecto")`.
+
+> Proximo día probaremos una optimización, no sé si será el `Patrón Singleton` o **bloques estáticos** para que el archivo de configuración se lea solo una vez al arrancar el programa y no cada que creas un objeto `MiConfiguracion`... Ya veremos :P
