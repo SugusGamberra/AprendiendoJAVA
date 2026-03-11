@@ -14,11 +14,30 @@ public class MiConfiguracion {
 	 * el proximo dia vamos a probar una optimizacion
 	 */
 	
-	public MiConfiguracion() {
+	// PATRON SINGLETON!!!! Pasamos d public a private y...
+	//public MiConfiguracion() {
+	private MiConfiguracion() {
 		// para no cargar properties cada vez q instancie clases 
 		// creo un metodo d cargar propiedades y lo llamo aqui
 		cargarPropiedades();
 	}
+	
+	/* Ahora lo que hacemos es crear una variable privada de esta clase
+	 * Luego creamos un metodo publico estatico para poderlo llamar sin pasar x la clase
+	 * que devolvera una variable q llamaremos getInstance
+	 * Dentro hacemos comprobaciones
+	 */
+	
+	private static MiConfiguracion instance = null;
+	
+	public static MiConfiguracion getInstance() {
+		if (instance == null) {
+			instance = new MiConfiguracion();
+		}
+		
+		return instance;
+	}
+	// fin patron singleton
 	
 	private void cargarPropiedades() {
 		if (properties == null) {

@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"ProyectoMagia","c":"LectorRunas","l":"LectorRunas()","u":"%3Cinit%3E()"},{"p":"ProyectoMagia","c":"LectorRunas","l":"sacarRunaDiaria(String)","u":"sacarRunaDiaria(java.lang.String)"}];updateSearchResults();
