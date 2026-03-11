@@ -162,3 +162,58 @@ Esto es vital para no hardcodear rutas, contraseñas o configuraciones.
 * **Clase `Properties`**: Es una clase especial de Java que funciona como un diccionario. Le pasas el lector del archivo (`properties.load(bufferedReader)`) y luego sacas los valores con `properties.getProperty("clave", "valor_por_defecto")`.
 
 > Proximo día probaremos una optimización, no sé si será el `Patrón Singleton` o **bloques estáticos** para que el archivo de configuración se lea solo una vez al arrancar el programa y no cada que creas un objeto `MiConfiguracion`... Ya veremos :P
+
+---
+
+# [Generar documentación](./TextFiles.v02/src/ProyectoMagia/)
+
+Para que esto funcione es necesario comentar el código como toca!!
+
+1. A nivel de proyecto creamos una carpeta.
+2. Dentro, arrastramos ficheros que tengamos.
+3. En **Eclipse**, arriba donde File, Edit, etc, le damos a `Project` - `Generate Javadoc`. Marcamos todo público, seleccionamos la carpeta de destino y le damos a `Next`.
+4. Le damos un nombre y pasamos a `next` y `finish`.
+
+Esto nos habrá generado una documentación recopilada por clases.
+
+Voy a hacer un ejemplo chiquitísimo por mi cuenta para que veáis cómo se hace con una clase [`LectorRunas`](./TextFiles.v02/src/ProyectoMagia/LectorRunas.java).
+
+Ahora si abrimos [`index.html`](./TextFiles.v02/DocManual/index.html) veremos la docu montada!
+
+---
+
+# Patrón Singleton
+
+Lo que haremos hoy es una modificación para que llame a una instancia de la configuración en diferentes sitios.
+
+En la clase [`main`](./TextFiles.v02/src/aplicacion/Main.java) instanciamos `MiConfiguracion mc = new MiConfiguracion();`. Nada me impide volver a instanciarlo tantas veces como quiera/necesite. Esto implica que esta clase `mc` y `mc2` estaría en memoria 2 veces.
+
+Para evitar que se llame cuando quieran, en [`MiConfiguracion`](./TextFiles.v02/src/configuraciones/MiConfiguracion.java) el método público de `MiConfiguracion` quiero que lo pueda llamar en cualquier lado con solo una instancia y reutilizarla. Para ello usamos lo que dijeeee el **PATRON SINGLETON**!!!! VAMOSSSS ESE PEDAZO DE PREDICTTTT!!!! (si, estoy tomando apuntes y escribiendo esto a la vez que veo las clases muejeje)
+
+La cosa es conseguir que aunque sea privado lo podamos llamar desde cualquier otro lado.
+
+```java
+// PATRON SINGLETON
+private MiConfiguracion() {
+	cargarPropiedades();
+}
+
+/* Ahora lo que hacemos es crear una variable privada de esta clase
+ * Luego creamos un metodo publico estatico para poderlo llamar sin pasar x la clase
+ * que devolvera una variable q llamaremos getInstance
+ * Dentro hacemos comprobaciones
+ */
+
+private static MiConfiguracion instance = null;
+
+public static MiConfiguracion getInstance() {
+	if (instance == null) {
+		instance = new MiConfiguracion();
+	}
+	
+	return instance;
+}
+// fin patron singleton
+```
+
+Esto son cosas tipo ingeniería de software, truquitos wapardos.

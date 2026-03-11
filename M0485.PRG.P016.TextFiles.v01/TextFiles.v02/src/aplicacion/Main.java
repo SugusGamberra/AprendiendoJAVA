@@ -13,7 +13,19 @@ public class Main {
 		
 	public static void main(String[] args) {
 
+		/* Por el patron Singleton, aqui en lugar de
 		MiConfiguracion mc = new MiConfiguracion();
+		Ponemos
+		*/
+		MiConfiguracion mc = MiConfiguracion.getInstance();		
+		/* Como es la primera vez q la llamamos pasa x null, por ende se instancia y se
+		 * pone el objeto en memoria y la devolvemos
+		 * 
+		 * Si ahora intentamos poner
+		 * MiConfiguracion mc2 = MiConfiguracion.getInstance();
+		 * Ya no pasa por null, existe en memoria, x lo q devuelve la q esta en memoria
+		 */
+		
 		RUTA1 = mc.getRutaFichero();
 		AGREGAR = mc.getAgregar();
 		

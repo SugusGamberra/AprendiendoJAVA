@@ -11,7 +11,10 @@ import configuraciones.MiConfiguracion;
 
 public class LeerFichero {
 	
-	MiConfiguracion mc = new MiConfiguracion();
+	// Quitamos esto x el patron singleton
+//	MiConfiguracion mc = new MiConfiguracion();
+	MiConfiguracion mc = MiConfiguracion.getInstance();
+	
 	String saltoLinea = mc.getSaltoLinea();
 	
 	String leer(String rutaFichero) {
