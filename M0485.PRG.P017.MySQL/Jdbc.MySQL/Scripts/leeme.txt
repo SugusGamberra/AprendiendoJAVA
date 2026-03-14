@@ -1,0 +1,10 @@
+Descargar conector mysql desde:
+https://mvnrepository.com/artifact/com.mysql/mysql-connector-j/9.6.0
+
+Para incorporar al proyecto:
+1) Botón derecho sobre el proyecto
+2) Build Path > Configure BuildPath
+3) Pastaña Libreries
+4) Situarios en Classpath
+5) Agregar mediante "Add External jars" el componente descargado.
+6) Apply & Close.
