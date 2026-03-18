@@ -79,3 +79,78 @@ Es el punto de entrada de nuestro programa para probar que todo lo anterior func
 * Definimos las constantes de conexión: la `URL` (que incluye `jdbc:mysql://localhost:3306/`, salvo que lo cambiemos siempre es el mismo en MySQL Workbench, y el nombre de nuestra bbdd), el `USER` (normalmente `root`) y el `PASSWORD` que le tengamos puesto.
 * **Método `crearCliente()`:** Instanciamos objetos `Cliente`, les damos valores con los *setters*, creamos un `ClienteRepository` y llamamos al método `create` para guardarlos en MySQL.
 * **Método `listaTodosLosClientes()`:** Llamamos al método `findAll()` del repositorio, guardamos el resultado en un `ArrayList` y usamos un bucle *for-each* para imprimirlos uno a uno por consola.
+
+---
+
+## 📖 Consultas con parámetros
+
+Esto nos sirve para buscar por ejemplo el *id* de un cliente. Para evitar ataques (como la Inyección SQL) y hacer el código más limpio, usamos `?` como "huecos" que luego rellenamos.
+
+> ⚠️ El error del `if (resultSet.next())`:
+> `resultSet.first()`: A veces da problemas dependiendo del tipo de "cursor" que use la conexión.
+> `resultSet.next()`: Es la forma estándar. El cursor del ResultSet empieza antes de la primera fila. Al llamar a `.next()`, se mueve a la primera fila. Si devuelve `true`, es que hay datos; si es `false`, la consulta volvió vacía.
+
+```java
+String sql = "SELECT * from Clientes WHERE id = ?";
+PreparedStatement preparedStatement = connection.prepareStatement(sql);
+preparedStatement.setInt(1, id); // Rellenamos el primer '?' con el ID
+ResultSet resultSet = preparedStatement.executeQuery();
+
+if (resultSet.next()) { // Si hay un resultado...
+    // Mapeamos el resultado al objeto Cliente
+}
+```
+
+---
+
+## 🫢 Actualización de datos
+
+Para modificar registros, usamos la sentencia SQL `UPDATE`.
+
+```java
+public void update(Cliente cliente) {
+    String sql = "UPDATE clientes SET razon_social = ?, nombre_comercial = ?, limite_credito = ? WHERE id = ?;";
+    
+    try (Connection connection = getConnection()) {
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ps.setString(1, cliente.getRazonSocial());
+        ps.setString(2, cliente.getNombreComercial());
+        ps.setDouble(3, cliente.getLimiteCredito());
+        ps.setInt(4, cliente.getId());
+        
+        ps.executeUpdate(); // Se usa executeUpdate para INSERT, UPDATE y DELETE
+    } catch(SQLException e) {
+        System.err.println(e.getMessage());
+    }
+}
+```
+
+---
+
+## 🤔 Uso del `Optional<Cliente>`
+
+Es una forma elegante de decir: "Oye, igual te devuelvo un cliente, o igual no hay nada (null)".
+
+* Evita los famosos errores de `NullPointerException`.
+* En el `Inicio.java`, lo compruebas con `.isPresent()`.
+
+---
+
+## ⚠️ Recordando y usando el **Patrón Singleton**
+
+El objetivo de este patrón es asegurar que **solo exista una única instancia** de una clase en toda la aplicación. No queremos crear mil objetos `ClienteRepository`, sino que todos usen el mismo.
+
+* **Constructor privado**: Nadie fuera de la clase puede hacer un `new ClienteRepository()`.
+* **Atributo estático**: Guarda la única instancia que existirá.
+* **Método `getInstance()`**: Es el "portero". Si la instancia no existe, la crea; si ya existe, te da la que ya tenía.
+
+```java
+private static ClienteRepository instance = null;
+
+public static ClienteRepository getInstance(String url, String user, String password) {
+    if (instance == null) {
+        instance = new ClienteRepository(url, user, password);
+    }
+    return instance;
+}
+```

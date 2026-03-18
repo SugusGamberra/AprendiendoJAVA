@@ -1,6 +1,7 @@
 package aplication;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Inicio {
 
@@ -10,6 +11,11 @@ public class Inicio {
 	
 	public static void main(String[] args) {
 		//crearCliente();
+		listaTodosLosClientes();
+		System.out.println("---");
+		//buscarClientePorId();
+		//buscarPorRazonSocial();
+		modificarCliente();
 		listaTodosLosClientes();
 
 	}
@@ -26,13 +32,13 @@ public class Inicio {
 		cliente2.setLimiteCredito(2000);
 		
 		//instanciar
-		ClienteRepository clienteRepository = new ClienteRepository(URL, USER, PASSWORD);
+		ClienteRepository clienteRepository = ClienteRepository.getInstance(URL, USER, PASSWORD);
 		clienteRepository.create(cliente1);
 		clienteRepository.create(cliente2);
 	}
 	
 	private static void listaTodosLosClientes() {
-		ClienteRepository clienteRepository = new ClienteRepository(URL, USER, PASSWORD);
+		ClienteRepository clienteRepository = ClienteRepository.getInstance(URL, USER, PASSWORD);
 		
 		ArrayList<Cliente> clientes = clienteRepository.findAll();
 		
@@ -42,6 +48,50 @@ public class Inicio {
 			}
 		}
 		
+	}
+	
+	private static void buscarClientePorId() {
+		int id = 1;
+		ClienteRepository clienteRepository = ClienteRepository.getInstance(URL, USER, PASSWORD);
+		Optional<Cliente> optCliente = clienteRepository.findById(id);
+		
+		if (optCliente.isPresent()) {
+			Cliente cliente = optCliente.get();
+			System.out.println(cliente.toString());
+		} else {
+			System.err.println("El cliente con id " + id + " no existe.");
+		}
+	}
+	
+	private static void buscarPorRazonSocial() {
+		int id = 1;
+		ClienteRepository clienteRepository = ClienteRepository.getInstance(URL, USER, PASSWORD);
+		ArrayList<Cliente> clientes = clienteRepository.findByRazonSocial("1");
+		
+		if (clientes != null && clientes.size() > 0) {
+			for (Cliente c : clientes) {
+				System.out.println(c.toString());
+			}
+		}
+	}
+	
+	private static void modificarCliente() {
+		int id = 2;
+		ClienteRepository clienteRepository = ClienteRepository.getInstance(URL, USER, PASSWORD);
+		Optional<Cliente> optCliente = clienteRepository.findById(id);
+		
+		if (optCliente.isPresent()) {
+			Cliente cliente = optCliente.get();
+			cliente.setLimiteCredito(cliente.getLimiteCredito() + 100);
+			cliente.setNombreComercial(cliente.getNombreComercial() + "X");
+			cliente.setRazonSocial(cliente.getRazonSocial() + "X");
+			
+			clienteRepository.update(cliente);
+			
+			System.out.println("Cliente modificado");
+		} else {
+			System.err.println("El cliente con id " + id + " no existe.");
+		}
 	}
 
 }
