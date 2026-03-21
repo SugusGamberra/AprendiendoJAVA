@@ -36,7 +36,7 @@
 | [`M0485.PRG.P014.GestionCadenas`](./M0485.PRG.P014.GestionCadenas/) | Gestión de cadenas: `String` vs `StringBuilder` | ✅ |
 | [`M0485.PRG.P015.Excepciones`](./MO485.PRG.P015.Excepciones/) | Todo sobre `excepciones` en JAVA | ✅ |
 | [`M0485.PRG.P016.TextFiles`](./M0485.PRG.P016.TextFiles.v01/) | Escritura y lectura de ficheros con método **IO** y **NIO*** | ✅ |
-| [`M0485.PRG.P017.MySQL`](./M0485.PRG.P017.MySQL/) | Conexión de **BBDD** con **JAVA** (`jdbc`) |⌛ En proceso |
+| [`M0485.PRG.P017.MySQL`](./M0485.PRG.P017.MySQL/) | Conexión de **BBDD** con **JAVA** (`jdbc`), uso de **UI** en terminal |⌛ En proceso |
 | [`UF01.D08102025.P02AreaTriangulo`](./UF01.D08102025.P02AreaTriangulo/) | Cálculo de área del triángulo | ✅ |
 | [`UF01.D09102025.P03EjemplosJAVA`](./UF01.D09102025.P03EjemplosJAVA/) | Paradigmas imperativo y Orientado a Objetos | ✅ |
 
