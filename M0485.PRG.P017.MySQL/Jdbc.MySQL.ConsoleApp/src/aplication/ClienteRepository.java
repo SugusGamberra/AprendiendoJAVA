@@ -1,3 +1,4 @@
+//ACCESO DE DATOS
 package aplication;
 
 import java.sql.Connection;
@@ -120,8 +121,8 @@ public class ClienteRepository {
 		//Consulta
 		String sql = "SELECT * from Clientes WHERE id =?";
 		
-		try {
-			Connection connection = this.getConnection();
+		try (Connection connection = this.getConnection();){
+			
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, id);
 			ResultSet resultSet = preparedStatement.executeQuery();
@@ -132,6 +133,8 @@ public class ClienteRepository {
 				resultado = Optional.of(cliente);
 				
 			}
+			
+			connection.close();
 			
 		} catch(SQLException ex) {
 			System.err.println(ex.getMessage());
@@ -195,12 +198,6 @@ public class ClienteRepository {
 	
 	private Cliente getClienteByResultSet(ResultSet resultSet) throws SQLException {
 		Cliente cliente = new Cliente();
-//		cliente.setId(resultSet.getInt("id"));
-//		cliente.setRazonSocial(resultSet.getString("razon_social"));
-//		cliente.setNombreComercial(resultSet.getString("nombre_comercial"));
-//		cliente.setLimiteCredito(resultSet.getDouble("limite_credito"));
-		
-		//tb se puede poner x el orden d las columnas
 		cliente.setId(resultSet.getInt(1));
 		cliente.setRazonSocial(resultSet.getString(2));
 		cliente.setNombreComercial(resultSet.getString(3));

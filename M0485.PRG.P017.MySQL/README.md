@@ -1,4 +1,4 @@
-# 🗄️ Conexión Java - MySQL con JDBC
+# 🗄️ [Conexión Java - MySQL con JDBC](./Jdbc.MySQL/)
 
 Para poder trabajar con **bbdd** de forma particular, java necesita una **libreria** que sea capaz de entender cómo trabajar con **sql** (por ejemplo).
 
@@ -63,7 +63,7 @@ Esta clase es básicamente un reflejo de la tabla `clientes` que hemos creado en
 * Usamos métodos **Getters y Setters** para poder leer y escribir en esas variables.
 * Incluimos un método `toString()` que nos permite devolver el contenido del cliente en forma de `String` (muy útil para imprimir por consola luego y ver qué datos tiene el objeto).
 
-### 🗄️ La clase [`ClienteRepository`](./Jdbc.MySQL/src/aplication/ClienteRepository.java) (La Persistencia)
+### 🙍🏻‍♂️ La clase [`ClienteRepository`](./Jdbc.MySQL/src/aplication/ClienteRepository.java) (La Persistencia)
 
 En Java, a todo lo que se encarga de la **persistencia** (guardar y leer datos en la bbdd) se le suele llamar *Repository*. Aquí está el núcleo de JDBC:
 
@@ -154,3 +154,111 @@ public static ClienteRepository getInstance(String url, String user, String pass
     return instance;
 }
 ```
+
+---
+
+# [JDBC con UI](./Jdbc.MySQL.ConsoleApp/)
+
+En esta ocasión estamos trabajando con una **UI** (interfaz de usuario) en consola. Como en el proyecto anterior, organizamos todo bien y separamos responsabilidades en distintas capas. Cada clase que haga su webadita pero que la haga bien 🙂‍↕️
+
+---
+
+## [Configuración](./Jdbc.MySQL.ConsoleApp/src/configuracion/MiConfiguracion.java)
+
+No es seguro escribir contraseñas directamente en el código de conexión, por ende usamos un archivo externo llamado [`config.properties`](./Jdbc.MySQL.ConsoleApp/config.properties) que guarda la `url`, el `user` y el `password`.
+
+La clase `MiConfiguracion` lee este archivo usando `BufferedReader` y la clase `Properties`.
+
+Aplicamos el **patrón singleton** para cargar este archivo una sola vez en memoria.
+
+---
+
+## [El modelo](./Jdbc.MySQL.ConsoleApp/src/aplication/Cliente.java)
+
+Este es el reflejo exacto de la tabla `clientes` de MySQL en Java.
+
+* Tiene los mismos atributos (`id`, `razonSocial`, `nombreComercial` y `limiteCredito`)
+* Contiene constructores, **getters** y **setters** para leer y escribir.
+* Tiene un método `toString()` que devuelve el contenido del cliente en forma de `String`.
+
+---
+
+## [Núcleo de JDBC](./Jdbc.MySQL.ConsoleApp/src/aplication/ClienteRepository.java)
+
+Se encarga **exclusivamente** de hablar con la **bbdd**.
+
+* **Conexión**: El método `getConnection()` usa el `DriverManager` para abrir un puente con MySQL.
+* **Consultas con parámetros**: Para evitar ataques (el famoso **SQL injection**) usamos `PreparedStatement` poniendo `?` como "huecos" que luego rellenamos con `setString`, `setDouble`, etc
+* **Leer datos**: Hacemos `SELECT`. El resultado se guarda en un `ResultSet`. Con `while(resultSet.next())` recorremos las filas, creamos objetos `Cliente` y los metemos en un `ArrayList`.
+* **Cierre seguro**: Todo va en un bloque `try-catch` y **siempre** cerramos la conexión con `connection.close()` para liberar y no bloquear la bbdd.
+
+---
+
+## [Lógica de negocio](./Jdbc.MySQL.ConsoleApp/src/aplication/ClienteService.java)
+
+Es el cerebro que está entre la bbdd y el usuario.
+
+* Contiene un método `validarCliente()` que comprueba que la razón social no esté en blanco o que el crédito no sea negativo antes de guardar nada.
+* Si los datos están mal lanza una excepción (`IllegalArgumentException`) y si está bien le da permiso al `ClienteRepository` para ejecutar la acción.
+
+---
+
+## [UI](./Jdbc.MySQL.ConsoleApp/src/view/ClienteConsoleUI.java)
+
+Esto es lo que se ve en consola. Dibuja los menús de forma estética y recoge lo que el usuario teclea con el uso de `Scanner`. Solo se comunica con `ClienteService`. Si el servicio da un error de validación, esta clase lo captura con el `catch` y muestra un mensaje amigable.
+
+---
+
+## [Punto de entrada](./Jdbc.MySQL.ConsoleApp/src/aplication/Inicio.java)
+
+Es el `main`, simplemente obtiene los datos de `MiConfiguracion`, arranca el `ClienteService` y lanza el menú visual de `ClienteConsoleUI`.
+
+---
+
+> Usamos `Optional<Cliente>` para decirle tipo "igual la bbdd te devuelve un cliente o igual no". Lo usamos en el método `findById()` y evitamos los errores con esto de `NullPointerException`. En la interfaz en lugar de preguntar si es `null` preguntamos si está presente con métodos wapardos como `.ifPresentOrElse()`.
+> La importancia del **Patrón Singleton** para asegurar que **solo exista una única instancia** de una clase en toda la app. No queremos abrir 80mil conexiones o leer mil veces el archivo de configuración.
+> * **Constructor privado**: Nadie puede hacer un `new Clase()`.
+> * **Atributo estático**: Guarda la única instancia que existira (`private static instance = null`)
+> * **Método `getInstance()`**: Es como el portero, si la instancia no existe la crea. Si existe te dice que ya la tienes. Se usa en UI, Repository, Service y Configuración.
+> Hoy hemos añadido también el eliminar por id, cosa nueva referente al otro día. Como en el resto, sencillamente almacenamos en una variable tipo `String` el comando para borrar en mySQL, hacemos la conexión, vemos lo valores a cumplimentar y ejecutamos la actualización:
+
+```java
+//borrar
+public void deleteById(int id) {
+	String sql = "DELETE FROM clientes WHERE id = ?";
+
+	try(Connection connection = getConnection();) {
+
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+		//valores a cumplimentar
+		preparedStatement.setInt(1, id);
+
+		//ejecuta la actualizacion
+		preparedStatement.executeUpdate();
+
+		connection.close();
+
+	} catch(SQLException e) {
+		System.err.println(e.getMessage());
+	}
+}
+```
+
+> Y así se vería en consola masomenos
+
+<pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 10px; font-family: 'Courier New', Courier, monospace; line-height: 1.5; box-shadow: 0px 4px 10px rgba(0,0,0,0.3);">
+<span style="color: #87CEEB;">   . ☁️  .  .  💙  .  .  ☁️  .</span>
+<span style="color: #82a8fc;">  ╭──────────────────────────────────╮</span>
+<span style="color: #82a8fc;">  │ </span><span style="color: #ffffff; font-weight: bold;">  ☁️ Cinnamoroll Management ☁️ </span><span style="color: #82a8fc;"> │</span>
+<span style="color: #82a8fc;">  ├──────────────────────────────────┤</span>
+<span style="color: #87CEEB;">    1.</span><span style="color: #ffffff;"> Listar mis clientes ✨</span>
+<span style="color: #87CEEB;">    2.</span><span style="color: #ffffff;"> Buscar por ID 🔍</span>
+<span style="color: #87CEEB;">    3.</span><span style="color: #ffffff;"> Buscar por Razón Social 📖</span>
+<span style="color: #87CEEB;">    4.</span><span style="color: #ffffff;"> Dar de alta 🎀</span>
+<span style="color: #87CEEB;">    5.</span><span style="color: #ffffff;"> Actualizar datos 📝</span>
+<span style="color: #87CEEB;">    6.</span><span style="color: #ffffff;"> Eliminar cliente 🌸</span>
+<span style="color: #FFB6C1;">    0.</span><span style="color: #ffffff;"> Salir 🌙</span>
+<span style="color: #82a8fc;">  ╰──────────────────────────────────╯</span>
+<span style="color: #87CEEB;"> ✨ Elige una opción: </span><span style="color: #ffffff;">_</span>
+</pre>

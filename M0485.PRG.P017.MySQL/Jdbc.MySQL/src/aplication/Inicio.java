@@ -11,11 +11,13 @@ public class Inicio {
 	
 	public static void main(String[] args) {
 		//crearCliente();
-		listaTodosLosClientes();
-		System.out.println("---");
+		//listaTodosLosClientes();
+		//System.out.println("---");
 		//buscarClientePorId();
 		//buscarPorRazonSocial();
-		modificarCliente();
+//		modificarCliente();
+		listaTodosLosClientes();
+		eliminarCliente();
 		listaTodosLosClientes();
 
 	}
@@ -92,6 +94,14 @@ public class Inicio {
 		} else {
 			System.err.println("El cliente con id " + id + " no existe.");
 		}
+	}
+	
+	private static void eliminarCliente() {
+		int id = 2;
+		ClienteRepository clienteRepository = ClienteRepository.getInstance(URL, USER, PASSWORD);
+		clienteRepository.deleteById(id);
+		
+		System.out.println("Cliente eliminado");
 	}
 
 }
