@@ -262,3 +262,53 @@ public void deleteById(int id) {
 <span style="color: #82a8fc;">  ╰──────────────────────────────────╯</span>
 <span style="color: #87CEEB;"> ✨ Elige una opción: </span><span style="color: #ffffff;">_</span>
 </pre>
+
+---
+
+# Spec Driven Development
+
+Es **desarrollo guiado por especificaciones**, que es una metodología de desarrollo software en la que das specs claras y se definen **antes** de escribir código. El desarrollo se basa en cumplir exactamente estas specs. Funciona de la siguiente forma:
+
+1. **Definir la especifiación**:
+   1. *Ejemplo: El usuario puede iniciar sesión con el email y contraseñas válidos.*
+   2. Se detallan condiciones, errores, límites, etc
+2. **Convertir specs en pruebas (tests)**:
+   1. Muchas veces se combina con *Test-Driven Development (TDD)*.
+3. **Desarrollar el código**:
+   1. Solo necesario para cumplir la spec
+4. **Validar automáticamente**:
+   1. Si el código cumple la spec = *correcto*
+   2. Si no = *se corrige*
+
+## Spec
+
+Es un documento que describe la funcionalidad esperada, entradas y salidas, casos de uso, reglas de negocio, criterios de aceptación y ejemplos concretos (muy importante).
+
+## RElación con otras metodologías
+
+Muy relacionado con **Behavior-Driven Development** (specs en lenguaje natural) y TDD (specs como tests). SDD pone el foco en la spec como fuente de verdad.
+
+**Spec**: Si el user introduce la contraseña incorrecta el sistema debe mostrar un mensaje de error. Test derivado:
+```python
+assert login("user@test.com", "wrongpass") == "Credenciales inválidas"
+```
+
+El código se implementa solo lo necesario para dicho test.
+
+---
+
+# [MVC](./MVC.ConsoleApp/)
+
+> mvc model view control
+> Vamos a hacerla app de escritorio
+
+- **[Model domain](./MVC.ConsoleApp/src/model/domain/Cliente.java)**: De qué trata la aplicación. Si gestionáramos una app de una escuela es donde estarían las entidades aula, asignatura, profesores, alumnos, director, etc. Ponemos las estructuras de datos con la que trabaja la app.
+- **[Model repository](./MVC.ConsoleApp/src/model/repository/ClienteRepository.java)**: Clases con acceso de persistencia a la aplicación.
+- **[Controller](./MVC.ConsoleApp/src/controller/Inicio.java)**: Punto de entrada de la app. Es el intermediario que captura las interacciones del user en la vista y decide qué tiene que hacer, delegando el trabajo en los servicios correspondientes
+- **[Model Configuration](./MVC.ConsoleApp/src/model/configuration/MiConfiguracion.java)**: Ajustes globales del sistema. Se centraliza las conexiones a la bbdd, rutas d archivos, credenciales o cualquier config inicial que la app necesite leer para arrancar correctamente
+- **[Model Service](./MVC.ConsoleApp/src/model/service/ClienteService.java)**: Lógica d negocio. Se sitúa entre el controlador y el repositorio. Se aplican las reglas de la app (como validar que cierta info tenga un formato correcto y tal) antes de pedirle al repositorio que lo guarde en la bbdd
+- **[View](./MVC.ConsoleApp/src/view/)**: La cara visible, bien con la UI de consola o con la de desktop
+
+No se cambia nada del resto del código, solo le hemos incluido el cliente desktop. Vamos a trabajar con *eventos* y demás.
+
+Los componentes básicos se basarán en **swing** que es una librería de JAVA jeje.
