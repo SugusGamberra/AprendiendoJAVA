@@ -24,7 +24,7 @@ El curso está dividido en módulos. Iremos paso a paso, con explicaciones senci
 | **01** | Variables y concatenar | [VARIABLES](./2.%20Variables/README.md) | ✅ Listo |
 | **02** | Operadores aritméticos y lógicos | [OPERADORES](./3.%20Operadores%20aritméticos%20y%20lógicos/README.md) | ✅ Listo |
 | **03** | Estructuras de control de flujo | [CONTROL DE FLUJOS](./4.%20Estructuras%20de%20control%20de%20flujos/README.md) | ✅ Listo |
-| **04** | Modulación | - | ⏳ Pendiente |
+| **04** | Modulación | [MODULACIÓN](./5.%20Modulación/README.md) | ✅ Listo |
 | **05** | Arrays y listas | - | ⏳ Pendiente |
 | **06** | Diccionarios | - | ⏳ Pendiente |
 | **07** | Implementación | - | ⏳ Pendiente |
